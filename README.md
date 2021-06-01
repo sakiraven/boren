@@ -10,7 +10,7 @@
     - BoRen/src/ 后端源码
     - BoRen/WebRoot/ 前端源码
 - BoRenServer/ 开发过程中发现hibernate效果较差替换为mybatis
-    - BoRen/src/ 后端源码
-    - BoRen/WebRoot/ 前端源码
+    - BoRenServer/src/ 后端源码
+    - BoRenServer/WebRoot/ 前端源码
 - doc/ 为参赛文档
 
