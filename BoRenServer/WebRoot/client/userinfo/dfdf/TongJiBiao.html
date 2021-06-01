@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/ys.css"/>
+    <link rel="stylesheet" href="css/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/drl.css"/>
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+<body>
+<div class="dsd">
+
+    <aside class="box" id="test">
+        <button id="btn">三</button>
+        <ul>
+            <li><h3>青鸟博仁传后台</h3></li>
+            <li><a href="AdminShouYe.html" class="hout">后台首页</a></li>
+            <li><a href="GmGuanLi.html">Gm管理</a></li>
+            <li><a href="GmEmail.html">邮件系统</a></li>
+            <li><a href="index.html">用户管理</a></li>
+            <li><a href="FenLeiGm.html">分类管理</a></li>
+            <li><a href="TongJiBiao.html">统计图</a></li>
+            <li><a href="GuanYu.html">关于我们</a></li>
+        </ul>
+        <img class="shagay" src="../images/Qgaydou.png" alt=""/>
+    </aside>
+    <section>
+        <div class="col-md-8">
+            <div class="headtou"><span class="yhhang"><img class="yhimg" src="../images/ai-user.png" alt=""/><h4
+                    class="yhname">admin</h4><h4 class="yhesc">[退出]</h4></span></div>
+            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+            <p class="tongjixiang">选择博仁传统计项</p>
+            <div class="xuanzetjt">
+
+           <select class="xlktjt" >
+                <option value="" disabled selected>请选择统计图标样式</option>
+                <option value="1" onclick="window.location.href='TongJiBiao.html'">论坛帖子分类占比</option>
+                <option value="2" onclick="window.location.href='TongJiBiao2.html'">论坛访问量（日ip）</option>
+                <option value="3" onclick="window.location.href='TongJiBiao3.html'">论坛各类用户数</option>
+            </select></div>
+            <div id="itemmm" style="width:1000px;height:500px"></div>
+            <script type="text/javascript">
+                // 绘制图表。
+                //            echarts.init(document.getElementById('main')).setOption({
+                var myChart = echarts.init(document.getElementById('itemmm'));
+                option = {
+                    title: {
+                        text: '青鸟博仁传统计图',
+                        subtext: '帖子占比',
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                        data: ['闲聊灌水', '美食推荐', '技术大咖', '周边环境']
+                    },
+                    series: [
+                        {
+                            name: '访问来源',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '60%'],
+                            data: [
+                                {value: 335, name: '闲聊灌水'},
+                                {value: 310, name: '美食推荐'},
+
+                                {value: 135, name: '技术大咖'},
+                                {value: 1548, name: '周边环境'}
+                            ],
+                            itemStyle: {
+                                emphasis: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                };
+
+                myChart.setOption(option);
+                //            });
+
+            </script>
+        </div>
+    </section>
+
+
+</div>
+<script type="text/javascript" src="js/js.js"></script>
+
+</body>
+</html>

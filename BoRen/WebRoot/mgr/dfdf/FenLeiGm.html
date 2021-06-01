@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="css/ys.css" />
+<link rel="stylesheet" href="css/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/drl.css" />
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<aside class="box" id="test">
+			<button id="btn">三</button>
+			<ul>
+				<li><h3>青鸟博仁传后台</h3>
+				</li>
+				<li><a href="AdminShouYe.html" class="hout">后台首页</a>
+				</li>
+				<li><a href="GmGuanLi.html">Gm管理</a>
+				</li>
+				<li><a href="GmEmail.html">邮件系统</a>
+				</li>
+				<li><a href="index.html">用户管理</a>
+				</li>
+				<li><a href="FenLeiGm.html">分类管理</a>
+				</li>
+				<li><a href="TongJiBiao.html">统计图</a>
+				</li>
+				<li><a href="GuanYu.html">关于我们</a>
+				</li>
+			</ul>
+			<img class="shagay" src="../images/Qgaydou.png" alt="" />
+		</aside>
+		<section>
+
+			<div class="col-md-8">
+				<div class="headtou">
+					<span class="yhhang"><img class="yhimg"
+						src="../images/ai-user.png" alt="" />
+						<h4 class="yhname">admin</h4>
+						<h4 class="yhesc">[退出]</h4> </span>
+				</div>
+				<div class="fenleiguanli">
+					<!-- --------------one -----------------strart --------------- -->
+					<div class="bk_one">
+						<h3>{{typeName1}}管理</h3>
+						<table class="table table-striped" id="bk1">
+							<tr>
+								<th>帖子标题</th>
+								<th>帖子内容</th>
+								<th>操作</th>
+							</tr>
+
+							<tr v-for="post1 in oneList">
+								<td><img class="onegonggao" src="../images/tiezi%20(1).png"
+									alt="" />&nbsp;&nbsp;&nbsp;&nbsp;{{post1.post.postTitle}}</td>
+								<td>{{post1.post.postText}}</td>
+								<td><a href="javascript:;"
+									@click="delPost(post1.post.postId,typeId1,currPageOne)">删除</a>
+								</td>
+							</tr>
+						</table>
+						<div class="bankuaifenye">
+							<nav>
+								<ul class="pagination pagination-sm">
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageOne=1,typeId1)">|&lt;</a></li>
+									<li class="disabled"><a href="javascript:;"
+										@click="pageSelect(currPageOne=currPageOne-1,typeId1)"><i
+											class="fa fa-angle-left"></i>«</a>
+									</li>
+									<li class="active"><a href="javascript:;">{{currPageOne}}</a>
+									</li>
+									<li><a href="javascript:;">&gt;&lt;</a>
+									</li>
+									<li><a href="javascript:;">{{countPageOne}}</a>
+									</li>
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageOne=currPageOne+1,typeId1)"><i
+											class="fa fa-angle-right"></i>»</a>
+									</li>
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageOne=countPageOne,typeId1)">|&gt;</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- --------------one -----------------end --------------- -->
+
+					<!-- --------------two -----------------strart --------------- -->
+					<div class="bk_two">
+						<h3>{{typeName2}}</h3>
+						<table class="table table-striped" id="bk2">
+							<tr>
+								<th>帖子标题</th>
+								<th>帖子内容</th>
+								<th>操作</th>
+							</tr>
+
+							<tr v-for="post2 in twoList">
+								<td><img class="onegonggao" src="../images/tiezi%20(1).png"
+									alt="" />&nbsp;&nbsp;&nbsp;&nbsp;{{post2.post.postTitle}}</td>
+								<td>{{post2.post.postText}}</td>
+								<td><a href="javascript:;"
+									@click="delPost(post2.post.postId,typeId2,currPageTwo)">删除</a>
+								</td>
+							</tr>
+
+
+						</table>
+						<div class="bankuaifenye">
+							<nav>
+								<ul class="pagination pagination-sm">
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageTwo=1,typeId2)">|&lt;</a>
+									</li>
+									<li class="disabled"><a href="javascript:;"
+										@click="pageSelect(currPageTwo=currPageTwo-1,typeId2)"><i
+											class="fa fa-angle-left"></i>«</a>
+									</li>
+									<li class="active"><a href="javascript:;">{{currPageTwo}}</a>
+									</li>
+									<li><a href="javascript:;">&gt;&lt;</a>
+									</li>
+									<li><a href="javascript:;">{{countPageTwo}}</a>
+									</li>
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageTwo=currPageTwo+1,typeId2)"><i
+											class="fa fa-angle-right"></i>»</a>
+									</li>
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageTwo=countPageTwo,typeId2)">|&gt;</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- --------------two -----------------end --------------- -->
+
+					<!-- --------------three -----------------strart --------------- -->
+					<div class="bk_three">
+						<h3>{{typeName3}}</h3>
+						<table class="table table-striped" id="bk3">
+							<tr>
+								<th>帖子标题</th>
+								<th>帖子内容</th>
+								<th>操作</th>
+							</tr>
+
+							<tr v-for="post3 in threeList">
+								<td><img class="onegonggao" src="../images/tiezi%20(1).png"
+									alt="" />&nbsp;&nbsp;&nbsp;&nbsp;{{post3.post.postTitle}}</td>
+								<td>{{post3.post.postText}}</td>
+								<td><a href="javascript:;"
+									@click="delPost(post3.post.postId,typeId3,currPageThree)">删除</a>
+								</td>
+							</tr>
+
+
+						</table>
+						<div class="bankuaifenye">
+							<nav>
+								<ul class="pagination pagination-sm">
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageThree=1,typeId3)">|&lt;</a>
+									</li>
+									<li class="disabled"><a href="javascript:;"
+										@click="pageSelect(currPageThree=currPageThree-1,typeId3)"><i
+											class="fafa-angle-left"></i>«</a></li>
+									<li class="active"><a href="javascript:;">{{currPageThree}}</a>
+									</li>
+									<li><a href="javascript:;">&gt;&lt;</a>
+									</li>
+									<li><a href="javascript:;">{{countPageThree}}</a>
+									</li>
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageThree=currPageThree+1,typeId3)"><i
+											class="fafa-angle-right"></i>»</a></li>
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageThree=countPageThree,typeId3)">|&gt;</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- --------------three -----------------end --------------- -->
+
+					<!-- --------------four -----------------strart --------------- -->
+					<div class="bk_four">
+						<h3>{{typeName4}}</h3>
+						<table class="table table-striped" id="bk4">
+							<tr>
+								<th>帖子标题</th>
+								<th>帖子内容</th>
+								<th>操作</th>
+							</tr>
+							<tr v-for="post4 in fourList">
+								<td><img class="onegonggao" src="../images/tiezi%20(1).png"
+									alt="" />&nbsp;&nbsp;&nbsp;&nbsp;{{post4.post.postTitle}}</td>
+								<td>{{post4.post.postText}}</td>
+								<td><a href="javascript:;"
+									@click="delPost(post4.post.postId,post4,currPageFour)">删除</a></td>
+							</tr>
+						</table>
+						<div class="bankuaifenye">
+							<nav>
+								<ul class="pagination pagination-sm">
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageFour=1,typeId4)">|&lt;</a>
+									</li>
+									<li class="disabled"><a href="javascript:;"
+										@click="pageSelect(currPageFour=currPageFour-1,typeId4)"><i
+											class="fafa-angle-left"></i>«</a></li>
+									<li class="active"><a href="javascript:;">{{currPageFour}}</a>
+									</li>
+									<li><a href="javascript:;">&gt;&lt;</a>
+									</li>
+									<li><a href="javascript:;">{{countPageFour}}</a>
+									</li>
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageFour=currPageFour+1,typeId4)"><i
+											class="fafa-angle-right"></i>»</a></li>
+									<li><a href="javascript:;"
+										@click="pageSelect(currPageFour=countPageFour,typeId4)">|&gt;</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!-- <div class="tianjiabk">
+							<input class="bktext" placeholder="请输入板块名称" type="text" /> <input
+								class="addbk" type="button" value="立即添加" />
+							<p class="bksm">
+								此板块还不存在如果需要添加需要注意以下风险：<br /> <br />1.创建成功后需要合理分配数据的管理 <br />2.没经过用户同意禁止删除板块，因为删除是（高危风险）
+								<br />3.请遵守版权和法律来创建合法的板块
+							</p>
+						</div>
+					</div> -->
+						<!-- --------------four -----------------strart --------------- -->
+					</div>
+				</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/mgr_mokuai.js"></script>
+</body>
+</html>

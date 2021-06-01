@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="css/ys.css" />
+<link rel="stylesheet" href="css/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/drl.css" />
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+<body>
+	<div class="dsd">
+
+		<aside class="box" id="test">
+			<button id="btn">三</button>
+			<ul>
+				<li><h3>青鸟博仁传后台</h3>
+				</li>
+				<li><a href="AdminShouYe.html" class="hout">后台首页</a>
+				</li>
+				<li><a href="GmGuanLi.html">Gm管理</a>
+				</li>
+				<li><a href="GmEmail.html">邮件系统</a>
+				</li>
+				<li><a href="index.html">用户管理</a>
+				</li>
+				<li><a href="FenLeiGm.html">分类管理</a>
+				</li>
+				<li><a href="TongJiBiao.html">统计图</a>
+				</li>
+				<li><a href="GuanYu.html">关于我们</a>
+				</li>
+			</ul>
+			<img class="shagay" src="../images/Qgaydou.png" alt="" />
+		</aside>
+		<section>
+			<div class="col-md-8">
+				<div class="headtou">
+					<span class="yhhang"><img class="yhimg"
+						src="../images/ai-user.png" alt="" />
+						<h4 class="yhname">admin</h4>
+						<h4 class="yhesc">[退出]</h4> </span>
+				</div>
+				<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+				<p class="tongjixiang">选择博仁传统计项</p>
+				<div class="xuanzetjt">
+
+					<select class="xlktjt">
+						<option value="" disabled selected>请选择统计图标样式</option>
+						<option value="1" onclick="window.location.href='TongJiBiao.html'">论坛帖子分类占比</option>
+						<option value="2"
+							onclick="window.location.href='TongJiBiao2.html'">论坛访问量（日ip）</option>
+						<option value="3"
+							onclick="window.location.href='TongJiBiao3.html'">论坛各类用户数</option>
+					</select>
+				</div>
+				<div id="itemmm" style="width:1000px;height:500px"></div>
+				<script type="text/javascript">
+					// 绘制图表。
+					var app = echarts.init(document.getElementById('itemmm'));
+					var posList = [ 'left', 'right', 'top', 'bottom', 'inside',
+							'insideTop', 'insideLeft', 'insideRight',
+							'insideBottom', 'insideTopLeft', 'insideTopRight',
+							'insideBottomLeft', 'insideBottomRight' ];
+
+					app.configParameters = {
+						rotate : {
+							min : -90,
+							max : 90
+						},
+						align : {
+							options : {
+								left : 'left',
+								center : 'center',
+								right : 'right'
+							}
+						},
+						verticalAlign : {
+							options : {
+								top : 'top',
+								middle : 'middle',
+								bottom : 'bottom'
+							}
+						},
+						position : {
+							options : echarts.util.reduce(posList, function(
+									map, pos) {
+								map[pos] = pos;
+								return map;
+							}, {})
+						},
+						distance : {
+							min : 0,
+							max : 100
+						}
+					};
+
+					app.config = {
+						rotate : 90,
+						align : 'left',
+						verticalAlign : 'middle',
+						position : 'insideBottom',
+						distance : 15,
+						onChange : function() {
+							var labelOption = {
+								normal : {
+									rotate : app.config.rotate,
+									align : app.config.align,
+									verticalAlign : app.config.verticalAlign,
+									position : app.config.position,
+									distance : app.config.distance
+								}
+							};
+							myChart.setOption({
+								series : [ {
+									label : labelOption
+								}, {
+									label : labelOption
+								}, {
+									label : labelOption
+								}, {
+									label : labelOption
+								} ]
+							});
+						}
+					};
+
+					var labelOption = {
+						normal : {
+							show : true,
+							position : app.config.position,
+							distance : app.config.distance,
+							align : app.config.align,
+							verticalAlign : app.config.verticalAlign,
+							rotate : app.config.rotate,
+							formatter : '{c}  {name|{a}}',
+							fontSize : 16,
+							rich : {
+								name : {
+									textBorderColor : '#fff'
+								}
+							}
+						}
+					};
+
+					option = {
+						color : [ '#003366', '#006699', '#4cabce', '#e5323e' ],
+						tooltip : {
+							trigger : 'axis',
+							axisPointer : {
+								type : 'shadow'
+							}
+						},
+						legend : {
+							data : [ '普通用户', '会员用户', '管理员' ]
+						},
+						toolbox : {
+							show : true,
+							orient : 'vertical',
+							left : 'right',
+							top : 'center',
+							feature : {
+								mark : {
+									show : true
+								},
+								dataView : {
+									show : true,
+									readOnly : false
+								},
+								magicType : {
+									show : true,
+									type : [ 'line', 'bar', 'stack', 'tiled' ]
+								},
+								restore : {
+									show : true
+								},
+								saveAsImage : {
+									show : true
+								}
+							}
+						},
+						calculable : true,
+						xAxis : [ {
+							type : 'category',
+							axisTick : {
+								show : false
+							},
+							data : [ '2015', '2016', '2017', '2018', '2019' ]
+						} ],
+						yAxis : [ {
+							type : 'value'
+						} ],
+						series : [ {
+							name : '普通用户',
+							type : 'bar',
+							label : labelOption,
+							data : [ 220, 182, 191, 234, 290 ]
+						}, {
+							name : '会员用户',
+							type : 'bar',
+							label : labelOption,
+							data : [ 150, 232, 201, 154, 190 ]
+						}, {
+							name : '管理员',
+							type : 'bar',
+							label : labelOption,
+							data : [ 98, 77, 101, 99, 40 ]
+						} ]
+					};
+					$(function() {
+						function typeUser() {
+							$.getJSON("../../allTypeUser.do", function(data) {
+								/* alert(data[int]["2"].vip); */
+								var list2 = data["2"];
+								//alert(data["1"].length + "1");
+								//alert(data["2"].length + "2");
+								var vipt = list2[0];
+								//alert(list2.vip[0].entityUtil.userInofName);
+								var ssqvip = vipt.vip;
+								alert(vipt.length);
+								//alert(vipt[].userInfo.userName);
+								for ( var i = 0; i < data.length; i++) {
+
+								}
+								/* for ( var int = 0; int < list2.length; int++) {
+									alert(list2[0]["vip"].length);
+								} */
+							});
+						}
+
+						typeUser();
+					});
+					app.setOption(option);
+				</script>
+			</div>
+		</section>
+
+
+	</div>
+	<script type="text/javascript" src="js/js.js"></script>
+
+</body>
+</html>

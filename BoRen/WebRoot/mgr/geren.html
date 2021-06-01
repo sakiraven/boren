@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>122</title>
+    <link rel="stylesheet" href="css/geren.css"/>
+</head>
+<body background="images/NARUTO%20(99).jpg">
+<div class="geren">
+    <div class="geren_xinxi">
+        <div class="touxiang"><img src="images/NARUTO%20(88).jpg" alt=""/>
+
+        </div>
+        <p class="geren_name">琉影丶邪尘</p>
+
+        <div><img class="xingbie" src="images/boy.png" alt=""/>
+
+            <p class="boy">用户名：琉影丶邪尘 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 吧龄：3年 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+                帖子：32</p></div>
+        <span class="renzheng"><img src="images/VIP.png" alt=""/> <img src="images/官方.png" alt=""/> <img
+                src="images/达人              .png" alt=""/></span>
+
+        <div class="fensi"> 粉丝数：75亿 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关注数：1
+        </div>
+        <div class="geren_xinxi_xia">
+            <a href="geren.html"><span class="caidan1"><p>我的主页</p></span></a>
+            <a href="geren_shoucang.html"> <span class="caidan2"><p>查看收藏</p></span></a>
+            <a href="geren_tieziguanli.html"> <span class="caidan3"><p>帖子管理</p></span></a>
+            <a href="geren_yunwendang.html"><span class="caidan4"><p>云文档</p></span></a>
+        </div>
+    </div>
+
+</div>
+<div class="qianbao">
+    <span class="me_money">|</span><span class="wdqb">我的钱包</span><br/>
+    <img class="fff" src="images/钱包.png" alt=""/><div class="juti_money"><span>￥</span><span>0</span></div><img class="jinbi" src="images/金币.png" alt=""/><div class="bi_money"><span>0</span><span>币</span></div>
+    <img src="images/帮助.png" class="bangzhu" alt="" title="
+    比例：
+    ￥1=1人民币
+    1000青鸟币=1人民币"/><div class="qb_an"><input type="button" class="qb_cz" value="充值"/><input type="button" class="qb_tx" value="提现"/><input type="button" class="qb_vip" value="VIP中心"/></div>
+
+</div>
+<div id="geren_xinxi">
+    <div class="aiguang">
+        <span class="gang_se">|</span><span class="agfl">爱逛的分类</span><br/>
+
+        <p>
+            <button class="geren_qu">美食区</button>
+            <button class="geren_qu">游戏区</button>
+            <button class="geren_qu">周边区</button>
+            <button class="geren_qu">娱乐区</button>
+            <button class="geren_qu">添加爱逛的分类+</button>
+        </p>
+    </div>
+</div>
+<div class="remendongtai">
+    <span class="txt_remen">|</span><span class="txt_dongtai">热门动态</span><br/>
+
+    <div class="liebiao1">
+        <div class="shuju1"><img src="images/game_one.jpg"></div>
+        <p>青鸟食堂的变革</p>
+        <span class="time_remen">2019-4-2</span>
+    </div>
+    <div class="liebiao1">
+        <div class="shuju1"><img src="images/game_two.jpg"></div>
+        <p>郑凯迪在青鸟的战争事件</p>
+        <span class="time_remen">2019-4-2</span>
+    </div>
+    <div class="liebiao1">
+        <div class="shuju1"><img src="images/wangka.jpg"></div>
+        <p>北大青鸟周围环境比较好的网吧</p>
+        <span class="time_remen">2019-4-2</span>
+    </div>
+    <div class="liebiao1">
+        <div class="shuju1"><img src="images/wangka.jpg"></div>
+        <p>北大青鸟周围环境比较好的网吧</p>
+        <span class="time_remen">2019-4-2</span>
+    </div>
+    <div class="liebiao1">
+        <div class="shuju1"><img src="images/wangka.jpg"></div>
+        <p>北大青鸟周围环境比较好的网吧</p>
+        <span class="time_remen">2019-4-2</span>
+    </div>
+    <div class="liebiao1">
+        <div class="shuju1"><img src="images/wangka.jpg"></div>
+        <p>北大青鸟周围环境比较好的网吧</p>
+        <span class="time_remen">2019-4-2</span>
+    </div>
+    <div class="liebiao1">
+        <div class="shuju1"><img src="images/game_two.jpg"></div>
+        <p>郑凯迪在青鸟的战争事件</p>
+        <span class="time_remen">2019-4-2</span>
+    </div>
+    <div class="liebiao1">
+        <div class="shuju1"><img src="images/game_two.jpg"></div>
+        <p>郑凯迪在青鸟的战争事件</p>
+        <span class="time_remen">2019-4-2</span>
+    </div>
+    <div class="path_ye" hidden="false" >
+        <input class="shang_path" type="button" value="<上一页"/>
+        <input class="xia_path" type="button" value="下一页>"/>
+    </div>
+</div>
+
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        var num=$(".liebiao1").length;
+        var hide1=5;
+      if(num>5){
+          $(".liebiao1:gt(4)").hide();
+          $(".path_ye").show();
+      }
+        $(".xia_path").click(function(){
+            var num=$(".liebiao1").length;
+            if(num>5){
+                $(".liebiao1:lt(5)").hide();
+                $(".liebiao1:gt(4)").show();
+
+                $(".path_ye").show();
+            }
+        })
+        $(".shang_path").click(function(){
+            var num=$(".liebiao1").length;
+            if(num>5){
+                $(".liebiao1:gt(4)").hide();
+                $(".liebiao1:lt(5)").show();
+
+                $(".path_ye").show();
+            }
+        })
+    })
+</script>
+<script src="js/geren.js"></script>
+</body>
+</html>

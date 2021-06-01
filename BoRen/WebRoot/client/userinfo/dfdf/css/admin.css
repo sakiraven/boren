@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /*background: #494A5F;*/
+    background-color: inherit;
+    background-color: rgb(141,179,58);
+
+    font-weight: 500;
+    font-family: "Microsoft YaHei","ËÎÌå","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+}
+/*#container {*/
+    /*width: 500px;*/
+    /*height: 820px;*/
+    /*margin: 0 auto;*/
+/*}*/
+div.search {padding: 30px 0;}
+a{
+    text-decoration: none;
+}
+form {
+    position: relative;
+    width: 300px;
+    /*margin: 0 auto;*/
+    margin-top: -10px;
+    margin-bottom: -20px;
+}
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+input {
+    width: 100%;
+    height: 42px;
+    padding-left: 13px;
+
+}
+
+button {
+    height: 42px;
+    width: 42px;
+    cursor: pointer;
+    position: absolute;
+}
+
+/*ËÑË÷¿ò1*/
+/*.bar1 {background: #A3D0C3;}*/
+.bar1 input {
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    background: #F9F0DA;
+    color: #9E9C9C;
+    width: 815px;
+position: relative;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+.bar1 button {
+    top: 0;
+    right: 0;
+    background: #7BA7AB;
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    left: 253%;
+}
+.sousuo{
+    width:60px;
+    color: white;
+    font-size: 8px;
+}
+.head_ding{
+
+}
+.head_ding span{
+    color: white;
+}
+.tuichu{
+    width: 25px;
+    height: 25px;
+}
+.yhqx{
+position: relative;
+    margin-left: 1000px;
+    margin-top: -50px;
+}
+.name{
+    position: relative;
+    margin-right: 10px;
+}
+.shenfen{
+    margin-right: 40px;
+}
+.bj_ss{
+    width: 1000px;
+    background-color: #fafafa;
+    border: 1px solid #acacac;
+position: relative;
+    z-index:0;
+    margin-left: 400px;
+top: 12%;
+    /*margin-top: 60px;*/
+    padding: 20px;
+
+
+}
+.njs{
+    background-color: white;
+    border: 1px solid #3c8df5;
+padding: 10px;
+}
+table.gridtable {
+    font-family: verdana, arial, sans-serif;
+    font-size: 11px;
+    color: #333333;
+    border-width: 1px;
+    border-color: rgb(198,230,119);
+    border-collapse: collapse;
+    position: relative;
+    margin: auto;
+
+}
+
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color:rgb(198,230,119);
+}
+
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+
+#tiezi_xinxi {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ffffff;
+    width: 1000px;
+    margin: auto;
+    position: relative;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+td a:visited {
+    text-decoration: none;
+}
+
+td a:hover {
+    color: #f6f4ff;
+    text-decoration: none;
+}
+
+td a {
+    text-decoration: none;
+    /*color: #dd3622;*/
+}
+.fh{
+    color: #222222;
+}
+.jf{
+    color: orange;
+}
+.yes{
+    color: green;
+}
+.no{
+    color: orange;
+}
+.gridtable tr td:hover {
+    background-color: #577dbd;
+    color: white;
+}
+
+.gridtable {
+    width: 930px;
+}
+
+td {
+    text-align: center;
+}
+.bdqn{
+    width: 260px;
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.xxcaidan{
+width: 280px;
+    height: 80px;
+    position: relative;
+    /*margin-left: 10px;*/
+    /*margin-top: 10px;*/
+    text-align: center;
+    color: white;
+
+}
+.xxcaidan:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.cai_image{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 15px;
+    margin-top: 28px;
+}
+.biaoti{
+    color: white;
+ position: relative;
+    margin-left: 10px;
+}
+.syyh{
+    position: relative;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    margin-top: -7px;
+}
+.syyhs{
+    color: red;
+    margin-right: 15px;
+}
+.zxyh{
+    color: blue;
+}
+.sh{
+    color: #005d00;
+}
+.zx{
+    color: #005300;
+}
+.shashigay{
+    width: 250px;
+    height: 200px;
+    position: relative;
+    margin-left: -6px;
+}
+.weitudingwei{
+    position: relative;
+    margin-left: 80px;
+}
+.path_ye{
+    width: 200px;
+    height: 40px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 770px;
+}
+.shang_path{
+    width: 60px;
+    height: 30px;
+   background-color: white;
+    border: 1px solid #7a6d57;
+
+}
+.xia_path{
+    width: 60px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid #7a6d57;
+}
+.shuru{
+    width: 60px;
+    height: 30px;
+    border: 1px solid #7a6d57;
+}

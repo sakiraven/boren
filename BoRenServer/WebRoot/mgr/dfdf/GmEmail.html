@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="css/ys.css" />
+<link rel="stylesheet" href="css/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/drl.css" />
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div class="dsd" id="myApp">
+
+		<aside class="box" id="test">
+			<button id="btn">三</button>
+			<ul id="meun">
+				<li><h3>青鸟博仁传后台</h3></li>
+				<li><a href="AdminShouYe.html" class="hout">后台首页</a></li>
+				<li><a href="GmGuanLi.html">Gm管理</a></li>
+				<li><a href="GmEmail.html">邮件系统</a></li>
+				<li><a href="index.html">用户管理</a></li>
+				<li><a href="FenLeiGm.html">分类管理</a></li>
+				<li><a href="TongJiBiao.html">统计图</a></li>
+				<li><a href="GuanYu.html">关于我们</a></li>
+			</ul>
+			<img class="shagay" src="../images/Qgaydou.png" alt="" />
+		</aside>
+		<section>
+
+			<div class="col-md-8">
+				<div class="headtou">
+					<span class="yhhang"><img class="yhimg"
+						src="../images/ai-user.png" alt="" />
+						<h4 class="yhname">admin</h4>
+						<h4 class="yhesc">[退出]</h4> </span>
+				</div>
+				<div class="mailxt">
+					<div class="jubaomail" @click="gmEmailAll(1,1)">
+						<span class="jb"> 用户举报</span>
+					</div>
+					<div class="fankuimail" @click="gmEmailAll(4,1)">
+						<span>用户反馈</span>
+					</div>
+					<div class="shensumail" @click="gmEmailAll(3,1)">
+						<span>用户申诉</span>
+					</div>
+				</div>
+				<table class="table table-striped" id="dsdsf">
+					<tr>
+						<th>标题</th>
+						<th>姓名</th>
+						<th>时间</th>
+						<th>原因</th>
+						<th>操作</th>
+					</tr>
+					<tr v-for="ssd in emailList">
+						<td><img class="weidumail" v-if="ssd.gmEmail.emailStatus==0"
+							src="../images/youjian.png" alt="" /><img class="weidumail"
+							v-if="ssd.gmEmail.emailStatus==1" src="../images/chaikaimail.png"
+							alt="" />&nbsp;&nbsp;&nbsp;&nbsp;{{ssd.emailType.emailType}}</td>
+						<td>{{ssd.userInfo.userName}}</td>
+						<td>{{ssd.gmEmail.emailTime}}</td>
+						<td>{{ssd.gmEmail.emailText}}</td>
+						<td><input type="button" class="mailshanchu" value="删除"
+							@click="delGmEmail(ssd.gmEmail.emailId)" /><span>&nbsp;&nbsp;</span><input
+							@click="htmlTi(ssd.gmEmail.emailId)" type="button"
+							class="mailchakan" value="查看" /></td>
+					</tr>
+				</table>
+				<div class="col-md-6">
+					<nav>
+						<ul class="pagination">
+							<li><a href="javascript:;" @click="pageSelect(currPage=1)">|&lt;</a>
+							</li>
+							<li class="disabled"><a href="javascript:;"
+								@click="pageSelect(currPage=currPage-1)">« </a>
+							</li>
+
+							<li class="active"><a href="javascript:;">{{currPage}}</a></li>
+							<li><a href="javascript:;">&gt;&lt;</a></li>
+							<li class="active"><a href="javascript:;">{{countPage}}</a>
+							</li>
+
+							<li><a href="javascript:;"
+								@click="pageSelect(currPage=currPage+1)">» </a></li>
+							<li><a href="javascript:;" @click="pageSelect(countPage)">&gt;|</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/mgr_email.js">
+		
+	</script>
+</body>
+</html>

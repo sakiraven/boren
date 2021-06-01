@@ -1,0 +1,65 @@
+.biaotilan {
+    /*color: #03a9f4;*/
+    /*background-color: rgba(244, 16, 175, 0.53);*/
+    /*margin: 0px auto;*/
+    /*background-color: #03a9f4;*/
+    /*background-color: rgba(0, 0, 0, 0.14);*/
+    box-shadow:rgba(0, 0, 0, 0.14) 5px  1px 5px 1px  ;
+    position: fixed;
+    width: 100%;
+    height: 48px;
+    margin-top: -5px;
+    text-align: center;
+    line-height: 300%;
+
+    z-index: 10;
+    /*margin: 0px auto;*/
+}
+.tianqi {
+    margin-top: 6px;
+    width: 20%;
+    height: 40px;
+    /*height: 50px;;*/
+    /*border-left: 5px solid black;*/
+    float: left;
+    /*background-color: rgba(0, 0, 0, 0.14);*/
+
+}
+.zhongxin {
+    /*background-color: aqua;*/
+    position: relative;
+    width: 59%;
+    /*height: 68px;*/
+    float: left;
+    border-left: 1px solid rgba(0, 0, 0, 0.35);
+    border-right: 1px solid rgba(0, 0, 0, 0.35);
+}
+.gerenxinxi {
+    padding-top: 10px;
+    vertical-align:middle;
+    line-height:1.6;
+    width: 20%;;
+    /*height: 58px;*/
+    float: right;
+    margin-top: 5px;
+
+}
+.sousuobtn{
+    /*position: relative;*/
+    height: 30px;
+    width: 50px;
+    /*left: 0px;*/
+    margin-left: -2px;
+    text-align: center;
+    line-height: 10px;
+    border-radius: 5px;
+    top: -3px;
+    right: 230px;
+    border: 1px solid #043267;
+    background-color: #0394d7;
+    color: white;
+    /*padding-bottom:112px;*/
+    /*margin-left: 10px;*/
+    /*border-bottom: 1.5px solid;*/
+    /*border-right: 1.5px solid;*/
+}

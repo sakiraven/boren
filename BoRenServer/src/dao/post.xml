@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.PostDao">
+	<resultMap type="entity.Post" id="postMap">
+		<id property="postId" column="post_id" />
+		<result property="postCoinNum" column="post_coin_Num" />
+		<result property="postTitle" column="post_Title" />
+		<result property="postText" column="post_Text" />
+		<result property="postTime" column="post_Time" />
+		<result property="postLoveNum" column="post_Love_Num" />
+		<result property="postVisitNum" column="post_Visit_Num" />
+		<result property="postCoinNum" column="post_Coin_Num" />
+		<result property="postStatus" column="post_Status" />
+		<result property="postRelStatus" column="post_Rel_Status" />
+		<result property="postImg" column="post_Img" />
+		<result property="postTypeId" column="post_Type_Id" /> 
+		<result property="postUserId" column="post_user_id" />
+		<result property="postCmmtNum" column="postCmmtNum" />
+		<result property="postColl" column="postColl" />
+		<result property="userImg" column="user_Img" />
+		<result property="userName" column="user_Name" />
+		<result property="userTime" column="user_Time" />
+		<result property="postTypeName" column="postTypeName" />
+		<!-- <result property="userIsFans" column="userIsFans" /> -->
+	</resultMap>
+	<sql id="dynamic" >
+		<if test="postTypeId!=null and postTypeId!=''">
+			and post_type_id = #{postTypeId}
+		</if> 
+		<if test="postTitle!=null and postTitle!=''">
+			and post_title like concat('%',#{postTitle},'%')
+		</if> 
+	</sql>
+	
+	<sql id="subQuery">
+		(SELECT COUNT(1) FROM `comment` WHERE `comment`.`cmmt_post_id`=post.`post_id`) postCmmtNum
+	</sql>
+
+	<select id="postLoveQuery" resultMap="postMap"  parameterType="entity.Post">
+		SELECT * ,
+		<include refid="subQuery"></include> 
+		FROM post
+		where 1=1
+		<include refid="dynamic"></include>
+		ORDER BY post_love_num DESC 
+		limit 0,3
+	</select>
+	<select id="postTypeQuery" resultMap="postMap" parameterType="entity.Post">
+		select * ,
+		<include refid="subQuery"></include>
+		FROM post
+		where 1=1
+		<include refid="dynamic"></include>
+		ORDER BY post_time DESC
+		limit 0,#{maxPage}
+	</select>
+	
+	<insert id="postAdd" 
+	parameterType="entity.Post">
+		insert into post (post_user_id,post_title,post_text,post_type_id)
+		values(#{postUserId},#{postTitle},#{postText},#{postTypeId})
+	</insert>
+	
+	<select id="postSize" 
+			resultType="int" 
+			parameterType="entity.Post">
+		select count(1) from post 
+		where 1=1
+		<include refid="dynamic"></include>
+	</select>
+	
+	<select id="postQueryOneById" 
+			resultMap="postMap" 
+			parameterType="entity.Post">
+			select post.* ,user_info.user_name,user_info.user_img,user_info.user_Time,
+			(select count(1) from collect_post where coll_post_post_id = post.post_id) postColl,
+			(select post_type from post_type where post_type.post_type_id = post.post_type_id) postTypeName
+			<!-- ,
+			(SELECT COUNT(1) FROM fans_list 
+			WHERE fan_user = post.`post_user_id`
+			AND fan_fans_user = 2
+			)userIsFans  -->
+			from post,user_info
+			where post.post_user_id = user_info.user_id 
+			and post_id = #{postId}
+	</select>
+	
+	<update id="updateB"
+			parameterType="entity.Post">
+		update post 
+		set post_coin_num =1+post_coin_num 
+		where post_id =#{postId}
+	</update>
+	<select id="postBQuery"
+			parameterType="entity.Post"
+			resultMap="postMap">
+		SELECT post_coin_num FROM post
+		WHERE post_id =#{postId} 
+	</select>
+	<update id="postLove"
+			parameterType="entity.Post">
+		update post 
+		set post_love_num =1+post_love_num 
+		where post_id =#{postId}
+	</update>
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.MessageDao">
+	<resultMap type="entity.Message" id="messageMap">
+		<id property="msgId" column="msg_Id" />
+		<result property="msgPostId" column="msg_Post_Id" />
+		<result property="msgType" column="msg_Type" />
+		<result property="msgStatus" column="msg_Status" />
+		<result property="msgTime" column="msg_Time" />
+		<result property="msgSendId" column="msg_Send_Id" />
+		<result property="msgSendToId" column="msg_Send_To_Id" />
+		<result property="msgCommentId" column="msg_Comment_Id" />
+		<result property="postTitle" column="post_Title" />
+		<result property="cmmtFloor" column="cmmt_Floor" />
+		<result property="sendName" column="user_Name" />
+	</resultMap>
+	<select id="queryMessageByUserInfo" 
+			resultMap="messageMap"
+			parameterType="entity.Message" >
+		select msg.*,pst.post_id,pst.post_title,uinfo.user_name,cmt.cmmt_floor 
+		from message msg ,post pst,user_info uinfo,`comment` cmt
+		where msg.msg_post_id = pst.post_id
+		AND msg.msg_send_id = uinfo.user_id
+		AND msg.msg_comment_id = cmt.cmmt_id
+		AND msg_send_to_id = #{msgSendToId}
+	</select>
+	
+	<select id="queryMessageSize" 
+			resultMap="messageMap"
+			parameterType="entity.Message" >
+		select * from message 
+		where msg_send_to_id = #{msgSendToId}
+		and  msg_status = 0
+	</select>
+	
+	<update id="upDateStatus"
+			parameterType="entity.Message">
+			update message set msg_status = 1 
+			where msg_send_to_id=#{msgSendToId};
+	</update>
+			
+	<insert id="addMessage"
+			parameterType="entity.Message">
+			insert into message 
+			(msg_type,msg_send_id,msg_send_to_id,msg_post_id,msg_comment_id)
+			values
+			(#{msgType},#{msgSendId},#{msgSendToId},#{msgPostId},#{msgCommentId})
+	</insert>
+</mapper>

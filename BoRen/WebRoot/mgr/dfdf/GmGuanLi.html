@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/ys.css"/>
+    <link rel="stylesheet" href="css/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/drl.css"/>
+    <link rel="stylesheet" type="text/css" href="css/xcConfirm.css"/>
+    <script src="js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div class="dsd" id="myapp">
+
+    <aside class="box" id="test">
+        <button id="btn">三</button>
+        <ul>
+            <li><h3>青鸟博仁传后台</h3></li>
+            <li><a href="AdminShouYe.html" class="hout">后台首页</a></li>
+            <li><a href="GmGuanLi.html">Gm管理</a></li>
+            <li><a href="GmEmail.html">邮件系统</a></li>
+            <li><a href="index.html">用户管理</a></li>
+            <li><a href="FenLeiGm.html">分类管理</a></li>
+            <li><a href="TongJiBiao.html">统计图</a></li>
+            <li><a href="GuanYu.html">关于我们</a></li>
+        </ul>
+        <img class="shagay" src="../images/Qgaydou.png" alt=""/>
+    </aside>
+    <section>
+
+        <div class="col-md-8">
+            <div class="headtou">
+					<span class="yhhang"><img class="yhimg"
+                                              src="../images/ai-user.png" alt=""/>
+						<span class="yhname">admin</span>
+						<span class="yhesc">[退出]</span> </span>
+            </div>
+            <h3 class="gmglxt">Gm管理系统</h3>
+
+            <div id="gmgonggao" class="alert alert-info" role="alert">
+                <h4>公告管理：</h4>
+                <table class="table table-striped" id="caipubj">
+                    <tr>
+                        <th>公告标题</th>
+                        <th>公告内容</th>
+                        <th>操作</th>
+                    </tr>
+
+                    <tr v-for="notice in noticeList">
+                        <td><img class="onegonggao" src="../images/gonggao.png"
+                                 alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;{{notice.notice.noticeTitle}}
+                        </td>
+                        <td>{{notice.notice.noticeText}}</td>
+                        <td><a href="javascript:;"
+                               @click="delNotice(notice.notice.noticeId)">删除</a></td>
+                    </tr>
+
+                </table>
+                <!--<div class="bankuaifenye">-->
+                <nav style="margin-left: 228px;" >
+                    <ul class="pagination pagination-sm">
+                        <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i>«</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i>»</a></li>
+                    </ul>
+                </nav>
+                <!--</div>-->
+
+                <form action="">
+                    <input type="button" class="addgonggao" value="+添加公告"/>
+
+                </form>
+
+
+            </div>
+            <div id="gmshipu" class="alert alert-success" role="alert">
+                <h4>菜谱管理：</h4>
+                <table class="table table-striped" id="gonggaobj">
+                    <tr>
+                        <th>菜谱标题</th>
+                        <th>菜谱图片</th>
+                        <th>价格</th>
+                        <th>操作</th>
+                    </tr>
+
+                    <tr v-for="cook in cookList">
+                        <td><img class="onegonggao" src="../images/caipu.png" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;{{cook.cookBook.cookName}}
+                        </td>
+                        <td>{{cook.cookBook.cookImg}}</td>
+                        <td>{{cook.cookBook.cookPrice}}</td>
+                        <td><a href="javascrpt:;"
+                               @click="delCook(cook.cookBook.cookId)">删除</a></td>
+                    </tr>
+                </table>
+                <nav style="margin-left: 228px;">
+                    <ul class="pagination pagination-sm">
+                        <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i>«</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i>»</a></li>
+                    </ul>
+                </nav>
+                <form action="">
+                    <input type="button" class="addcaipu" value="+添加菜谱"/>
+                </form>
+            </div>
+            <div id="gmshangpin" class="alert alert-danger" role="alert">
+                <h4>商品管理：</h4>
+                <table class="table table-striped" id="shangpinbj">
+                    <tr>
+                        <th>商品标题</th>
+                        <th>商品价格</th>
+                        <th>操作</th>
+                    </tr>
+
+                    <tr v-for="comm in commodityList">
+                        <td><img class="onegonggao" src="../images/shangpin.png"
+                                 alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;{{comm.shopList.shopName}}
+                        </td>
+                        <td>{{comm.shopList.shopPrice}}</td>
+                        <td><a href="javascript:;"
+                               @click="delCommodity(comm.shopList.shopId)">删除</a></td>
+                    </tr>
+
+                </table>
+                <nav style="margin-left: 228px;" >
+                    <ul class="pagination pagination-sm">
+                        <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i>«</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i>»</a></li>
+                    </ul>
+                </nav>
+                <form action="">
+                    <input type="button" class="addshangpin" value="+添加商品"/>
+                </form>
+            </div>
+        </div>
+        <div class="mgbj" hidden="true" id="news">
+            <div class="moguiutw">
+                <h3 class="tjgg">添加公告</h3>
+					<span><img class="guanbian" src="../images/guanbi.png"
+                               alt=""/> </span> <input type="text" class="ggbt" v-model="noticeTitle"
+                                                       value="" placeholder="请输入公告标题"/><input type="text" class="ggnr"
+                                                                                              placeholder="请输入公告内容"
+                                                                                              v-model="noticeInfo"
+                                                                                              value=""/><input
+                    type="button" class="ljtj" value="立即添加" @click="addNotice()"/>
+            </div>
+        </div>
+        <div class="mgbj" hidden="true" id="cook">
+            <div class="moguiutw">
+                <h3 class="tjgg">添加菜品</h3>
+					<span><img class="guanbian" src="../images/guanbi.png"
+                               alt=""/> </span> <input type="text" class="ggbt" value=""
+                                                       placeholder="请输入菜品名字" v-model="cookName"/><input type="file"
+                                                                                                        class="ggbt"
+                                                                                                        placeholder="请选择上传的菜品图片"
+                                                                                                        v-model="cookImg"
+                                                                                                        value=""/><input
+                    type="text" placeholder="请输入菜品价格" v-model="cookPrice" class="ggnr"/><input
+                    type="button" class="ljtj" value="立即添加" @click="addCook()"/>
+            </div>
+        </div>
+        <div class="mgbj" hidden="true" id="shop">
+            <div class="moguiutw">
+                <h3 class="tjgg">添加商品</h3>
+					<span><img class="guanbian" src="../images/guanbi.png"
+                               alt=""/> </span> <input type="text" class="ggbt" value=""
+                                                       placeholder="请输入商品名字" v-model="shopName"/><input type="text"
+                                                                                                        class="ggnr"
+                                                                                                        placeholder="请输入商品金额"
+                                                                                                        value=""
+                                                                                                        v-model="shopPrice"/><input
+                    type="button" class="ljtj" value="立即添加" @click="addCommodity()"/>
+            </div>
+        </div>
+    </section>
+</div>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/mgr_gm.js"></script>
+</body>
+</html>

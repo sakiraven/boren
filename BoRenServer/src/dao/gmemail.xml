@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.GmEmailDao">
+	<resultMap type="entity.GmEmail" id="GmEmailMap">
+		<id property="emailId" column="emailId" />
+		<result property="emailType" column="email_Type" />
+		<result property="sendId" column="email_send_Id" />
+		<result property="sendToId" column="email_send_To_Id" />
+		<result property="emailText" column="email_Text" />
+		<result property="emailTime" column="email_Time" />
+		<result property="emailQuote" column="email_Quote" />
+		<result property="emailStatus" column="email_Status" />
+	</resultMap>
+	
+	<select id="queryGm" resultMap="GmEmailMap" parameterType="entity.UserInfo">
+		select * from gm_email where email_send_to_id = #{acctId}
+	</select>
+	<insert id="addGm" parameterType="entity.GmEmail" >
+		insert into gm_email (email_title_id,email_text,email_send_id) 
+		values (#{emailType},#{emailText},#{sendId})
+	</insert>
+</mapper>

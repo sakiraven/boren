@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>zhifu.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<script src="js/jquery-1.12.4.js"></script>
+  	<script src="vue.js"></script>
+  	<script src="js/jquery.cookie.js"></script>
+	<script>
+		$(function() {
+
+			var money = 0;
+			var begin = 0;
+			var end = 0;
+			var acctId = -1;
+			var search = window.location.search;
+			var param = decodeURI(search);
+			begin = param.indexOf("money=") + 6;
+			end = param.indexOf("&");
+			if (param.indexOf("money=") != -1)
+				money = param.substring(begin, end);
+
+			var key = "acctId";
+			var cki = $.cookie(key);
+			if (cki == undefined)
+				cki = "acctId=-1";
+			var getLogin = cki.split("=");
+			for ( var i = 0; i < getLogin.length; i++) {
+				acctId = getLogin[1];
+			}
+			if(acctId!=-1){
+				$.getJSON("../../reChange.do", "account.acctId="+acctId+"&userBalance="+money, function(data) {
+				history.pushState(null, null, document.URL);
+					window.location.replace("geren.html");
+				});
+			}
+		});
+	</script>
+</body>
+</html>

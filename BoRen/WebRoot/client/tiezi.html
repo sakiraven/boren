@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title> 
+    <link type="text/css" rel="stylesheet" href="css/tiezi.css">
+    <!--<link type="text/css" rel="stylesheet" href="css/shangbiaotilan.css">-->
+    <link type="text/css" rel="stylesheet" href="css/zhuye.css">
+    <link type="text/css" rel="stylesheet" href="css/shangbiaotilan.css">
+    <!--<link type="text/css" rel="stylesheet" href="css/denglu.css">-->
+    <!--<link rel="stylesheet" href="css/dist/css/bootstrap.min.css"/>-->
+    <!--<link rel="stylesheet" href="css/dist/css/bootstrap.min.css"/>-->
+    <link type="text/css" rel="stylesheet" href="css/denglu.css">
+    <script type="text/javascript" src="public/script/jquery.min.js"></script>
+    <script type="text/javascript" src="code/jquery.emoticons.js"></script>
+    <!--fenge-->
+    <link rel="stylesheet" href="icoroll/icomoon/style.css"/>
+    <link rel="stylesheet" href="icoroll/icoroll.css"/>
+    <link rel="stylesheet" href="icoroll/dark.css"/>
+
+    <script src="icoroll/jquery.js"></script>
+    <script src="icoroll/icoroll.js"></script>
+    
+    <style type="text/css">
+        .emoticons {
+            width: 525px;
+            margin-bottom: 20px;
+        }
+
+        .emoticons .publisher {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px dotted #dbdbdb;
+        }
+
+        .emoticons .publisher textarea {
+            width: 500px;
+            height: 140px;
+            padding: 5px 10px;
+            border: 1px solid #dbdbdb;
+            resize: none;
+        }
+
+        .emoticons .publisher .trigger {
+            font-size: 34px;
+            font-weight: bold;
+            color: #e8e8e8;
+            position: absolute;
+            margin-top: -8px;
+        }
+
+        .emoticons .publisher .trigger-active {
+            color: #eb7350;
+        }
+
+        .emoticons .result {
+            padding: 10px 15px;
+            border: 1px dotted #dbdbdb;
+            margin-top: 10px;
+            height: 150px;
+            line-height: 24px;
+        }
+
+        .emoticons .result img {
+            vertical-align: middle;
+        }
+
+        .widget-layer {
+            position: relative;
+            width: 410px;
+            margin-top: 8px;
+            background: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: 2px;
+        }
+
+        .widget-layer:before {
+            position: absolute;
+            top: -16px;
+            left: 2px;
+            display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-bottom-color: #dbdbdb;
+        }
+
+        .widget-layer:after {
+            position: absolute;
+            top: -15px;
+            left: 2px;
+            display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-bottom-color: #f0f0f0;
+        }
+
+        .widget-layer .widget-tool {
+            height: 28px;
+            background: #f0f0f0;
+        }
+
+        .widget-layer .widget-close {
+            float: right;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .widget-layer ul {
+            width: 372px;
+            margin: 0 auto;
+            padding: 15px 5px 20px;
+            overflow: hidden;
+        }
+
+        .widget-layer li {
+            position: relative;
+            z-index: 8;
+            float: left;
+            width: 22px;
+            height: 22px;
+            padding: 4px;
+            margin-left: -1px;
+            margin-top: -1px;
+            border: 1px solid #e8e8e8;
+            cursor: pointer;
+        }
+
+        .widget-layer li:hover {
+            z-index: 9;
+            border-color: #eb7350;
+        }
+
+    </style>
+</head>
+<body style="overflow-x: hidden; background-image: url('img/timg.jpg');background-repeat: no-repeat;background-attachment: fixed;">
+<!--<img class="beijing" src="img/timg.jpg">-->
+<div class="zongti11">
+
+    <!--————————————————标题栏————————————————-->
+    <div class="biaotilan">
+        <div class="tianqi ">
+            <iframe width="250" scrolling="no" height="25" frameborder="0" allowtransparency="true"
+                    src="//i.tianqi.com/index.php?c=code&id=1&icon=1&wind=1&num=2&site=12"></iframe>
+        </div>
+        <div class="zhongxin ">
+            <input type="text" class="zongtisousuo" id="search" hidden>
+            <button class="sousuobtn" hidden>搜索</button>
+        </div>
+        <div class="gerenxinxi " hidden>
+            <span class="qingdenglu" id="login">你好，请登录！</span>
+        </div>
+    </div>
+    <!--———————————————————————————————————-->
+
+   <div class="tz_zhuti post" style="padding: 0px;">
+<h5 style="color: #e7dfeb;margin: 10px;">{{postInfo.postTypeName}}>{{postInfo.postTitle}}</h5>
+        <input  v-on:click="postB" style="background: #933615;color: white;padding-left: 10px;padding-right: 10px;margin-left: 10px;margin-bottom: 10px;" type="button" value="打赏" />
+        打赏数：{{postInfo.postCoinNum}}
+        <input  v-on:click="postColl" style="background: #057a29;color: white;padding-left: 10px;padding-right: 10px;margin-left: 10px;margin-bottom: 10px;" type="button" value="收藏"/>
+   收藏数 ：{{postInfo.postColl}}
+    <input  v-on:click="postLove" style="background: #057a29;color: white;padding-left: 10px;padding-right: 10px;margin-left: 10px;margin-bottom: 10px;" type="button" value="点赞"/>
+   点赞数 ：{{postInfo.postLoveNum}}
+    </div>
+
+
+    <!--————————————————————   一楼    ————————————————————-->
+    <div class="tz_zhutineirong">
+           <div class="tz_yilou">
+            <div class="tz_zuocetouxiang">
+                
+                <center>
+                    <div class="tz_touxiangbiankuang">
+                        <img class="tz_touxiang" :src="postInfo.sendUserImg">
+
+                    </div>
+                    <div class="weizhi_lou">
+                    <span class="lou_name">         
+                    <div class="louzhuimg"><img src="images/louzhu.png" class="lz_img" alt=""/></div>
+                      
+                     <img class="svipimg" src="img/vip5-copy.png" alt="" v-if="postInfo.userVip>0"/>
+                      <span class="vip"  v-if="postInfo.userVip>0" style="font-weight: bold" >{{postInfo.userName}}</span>
+                      <span class="novip"  v-if="postInfo.userVip==0" style="font-weight: bold" >{{postInfo.userName}}</span>
+                      </span>
+                        <div class="tan_xinxi"><span style="color: #eeeeee;font-weight: bold;">传龄：</span>
+                        <span style="color: #eeeeee;font-weight: bold;">{{postInfo.userAge}}年</span><span style="color: #eeeeee;font-weight: bold;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <span style="color: #eeeeee;font-weight: bold;">粉丝数：</span><span style="color: #eeeeee;font-weight: bold;">{{postInfo.userFansNum}}</span></div>
+
+                     <div class="ggzz">   
+                     <input class="yiguanzhu" type="button" style="font-weight: bold" s value="已关注" v-if="(postInfo.userIsFans!=0||postInfo.acctId==acctId)&&acctId!=-1"/>
+                        
+                        <input class="guanzhubutton" style="font-weight: bold" type="button" value="关注" v-on:click="guanZhu(postInfo.acctId)" v-if="(postInfo.userIsFans==0&&postInfo.acctId!=acctId)&&acctId!=-1"/></div>
+                    </div>
+                </center>
+            </div>
+            <div class="tz_fabiaoneirongkuang">
+                <div class="tz_fatieneirong">
+                    <h2 style="color: red">{{postInfo.postTitle}}</h2><br/>
+                    <p >{{postInfo.postText}}</p>
+                </div>
+                <div class="tz_diji">
+
+                    <div class="tz_aaa" id="11">
+                        <div class="tz_span1" style="font-weight: bold">举报</div>
+                        &nbsp;&nbsp;&nbsp;
+                        <div style="color: #f06917;font-weight: bold;"  class="tz_span2">1</div>
+                        <div style="color: #f06917;font-weight: bold;" class="tz_span3">楼</div>
+                        <div style="color: #f06917;font-weight: bold;" class="tz_span4"> {{postInfo.postTime}}</div>
+                     <!--    <div  class="tz_span5" style="height: 30px;font-weight: bold">&nbsp;&nbsp;&nbsp;&nbsp;回复
+                        </div> -->
+                       <!--  <div class="tz_span6" style="display: none"> &nbsp;收起回复&nbsp;</div>
+                        <div class="tz_huifushuliang">
+                            (
+                            <div style="color: red;font-weight: bold">
+                                99+
+                            </div>
+                            )
+                        </div> -->
+                    </div>
+                    <div class="tz_huifu" style="display: none">
+                        <!--——————————————————————————————————楼中楼   ——————————————————————————————————————-->
+							<!-- <div class="tz_tarenpinglu">
+								<div>
+									<img src="img/beiijng.jpg" class="tz_tarentouxiang">
+
+									<div class="tz_pinglunwenzi">
+										<div class="tz_renming">金莲有话说</div>
+										<div class="tz_maohao">:</div>
+										<div class="tz_wenzi">
+											贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱贾大郎是个骗子，嫖完不给钱郎是个骗子，嫖完不给钱
+										</div>
+										<br />
+
+										<div class="tz_bbb">
+											<div class="tz_span1">举报</div>
+											&nbsp;&nbsp;&nbsp;
+											<div class="tz_span4">2019-5-7 10:33</div>
+											<div class="tz_span7" style="height: 30px">&nbsp;&nbsp;&nbsp;&nbsp;回复&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+											<div class="tz_span6" style="display: none">
+												&nbsp;收起回复&nbsp;</div>
+										</div>
+									</div>
+								</div>
+							</div> -->
+							<!--————————————————————————————————————————————————————————————————————————————-->
+                       
+                        <p class="wysyj" >我也说一句</p>
+
+                        <textarea class="tz_fabiao" ></textarea>
+                        <br/>
+
+                        <button class="fabiaohuifu">发表</button><span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--——————————————————————————————————————————————-->
+
+        <div class="tz_yilou" v-for="(item,index) in commentInfo">
+            <div class="tz_zuocetouxiang">
+                <center>
+                    <div class="tz_touxiangbiankuang">
+                        <img class="tz_touxiang" :src="item.sendUserImg">
+                    </div>
+                    <div class="weizhi_lou">
+                        <span class="lou_name" style="font-weight: bold"> {{item.userName}}</span>
+                        <div class="tan_xinxi">
+                        <span style="color: #eeeeee;font-weight: bold;">传龄：</span>
+                        <span style="color: #eeeeee;font-weight: bold;">{{item.userAge}}年</span><span style="color: #eeeeee;font-weight: bold;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <span style="color: #eeeeee;font-weight: bold;">粉丝数：</span><span style="color: #eeeeee;font-weight: bold;">{{item.userFansNum}}</span></div>
+                        <div class="ygz">   <input class="yiguanzhu" type="button" style="font-weight: bold" s value="已关注" v-if="(item.userIsFans!=0||item.acctId==acctId)&&acctId!=-1"/>
+                        
+                        <input class="guanzhubutton" style="font-weight: bold" type="button" value="关注" v-on:click="guanZhu(item.acctId)" v-if="(item.userIsFans==0&&item.acctId!=acctId)&&acctId!=-1"/>
+                        </div>
+                    </div>
+                </center>
+            </div>
+            <div class="tz_fabiaoneirongkuang">
+                <div class="tz_fatieneirong" class="shengnanniubi">{{item.cmmtText}} <img src="images/ldw/w_0003.gif" alt=""/></div>
+                <div class="tz_diji">
+                    <div class="tz_aaa">
+                        <div class="tz_span1" style="font-weight: bold">举报</div>
+                        &nbsp;&nbsp;&nbsp;
+                        <div style="color: #f06917;font-weight: bold;"  class="tz_span2">{{item.cmmtFloor}}</div>
+                        <div style="color: #f06917;font-weight: bold;" class="tz_span3">楼</div>
+                        <div style="color: #f06917;font-weight: bold;" class="tz_span4"> {{item.cmmtTime}}</div>
+                        <div  class="tz_span5" style="height: 30px;font-weight: bold" v-on:click="cmmtTwoShow(item.cmmtId,currentPage=1,index,1,item.acctId)">&nbsp;&nbsp;&nbsp;&nbsp;<span >回复</span>
+                        </div>
+                        <div class="tz_span6" style="display: none" v-on:click="cmmtTwoShow(item.cmmtId,0,index,1,item.acctId)"> &nbsp; 收起回复&nbsp;</div>
+                        <div class="tz_huifushuliang"  >
+                            (
+                            <div style="color: red;font-weight: bold" >
+                                {{item.cmmtTwoNum}}
+                            </div>
+                            )
+                        </div>
+                    </div>
+                    <div class="tz_huifu" style="display: none" >
+							<div>
+
+								<div class="tz_tarenpinglu" v-for="item in commentTwo">
+										<img :src="item.sendUserImg" class="tz_tarentouxiang">
+
+										<div class="tz_pinglunwenzi">
+											<div class="tz_renming" style="color:blue">{{item.sendName}}</div>
+											<div class="tz_maohao">@ </div><span style="color:blue">	<!-- <img :src="item.sendToUserImg" class="tz_tarentouxiang"> -->{{item.sendToName}}</span> :
+											<div class="tz_wenzi">{{item.cmmtTwoText}}</div>
+											<div class="tz_bbb">
+												<div class="tz_span1">举报</div>
+												&nbsp;&nbsp;&nbsp;
+												<div class="tz_span4">{{item.cmmtTime}}</div>
+												<div class="tz_span7" style="height: 30px">&nbsp;&nbsp;&nbsp;&nbsp;<span class="reCall" v-on:click="reCallTwo(item.sendId)">回复</span>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+												<!--<div class="tz_span6" style="display: none"> &nbsp;收起回复&nbsp;</div>-->
+											</div>
+										</div>
+									</div>
+											<div class="shangxiaye">{{currentPage}}
+												<div  v-if="currentPage!=1">
+													<span><a href="javascript:volid(0);" v-on:click="cmmtTwoShow(item.cmmtId,currentPage=1,index,0,item.acctId)">首页</a>
+													</span>&nbsp;&nbsp;<span>
+													<a href="javascript:volid(0);"  v-on:click="cmmtTwoShow(item.cmmtId,currentPage-=1,index,0,item.acctId)" >上一页</a></span>
+												</div>
+												
+												<span  v-if="currentPage!=countPage">
+													&nbsp;<span>
+													<a href="javascript:volid(0);"  v-on:click="cmmtTwoShow(item.cmmtId,currentPage+=1,index,0)">下一页</a>
+													</span>&nbsp;&nbsp;<span><a href="javascript:volid(0);"  v-on:click="cmmtTwoShow(item.cmmtId,currentPage=countPage,index,0)" >尾页</a>
+													</span>
+												</span>
+											</div>
+								
+
+							<div class="sendTwoCmmt">
+								<p class="wysyj" v-on:click="twoAcctId=item.acctId">我也说一句</p>
+
+								<textarea class="tz_fabiao" v-model="twoText"></textarea>
+								<br />
+
+								<button class="fabiaohuifu" v-on:click="sendTwo(item.cmmtFloor,item.cmmtId)">发表</button>
+								<span><img class="biaoqing" src="img/hsa_thumb.gif"
+									alt="" />
+								</span>
+							</div>
+							</div>
+						</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="public/script/jquery.min.js"></script>
+    <script type="text/javascript" src="code/jquery.emoticons.js"></script>
+    <div class="fenleifatie" style="margin-left: 210px;" v-if="acctId!=-1">
+        <h3 class="xgshui">评论</h3><span>
+        <input type="button" class="tz_jiacu" value="加粗" v-on:click="selectText('加粗')"/></span><span>
+        <input type="button" class="tz_xieti"  value="斜体" v-on:click="selectText('斜体')"/></span><span>
+        <input class="tz_xiahuaxian" type="button" value="下划线" v-on:click="selectText('下划线')"/></span>
+        <!-- <span><input type="button" class="tz_tupian" value="缩进"/></span>  <span>
+        <input type="button" class="tz_biaoti" value="标题"/></span><span>
+        <input type="button" class="tz_huanhang" value="换行"/></span> -->
+        <div class="emoticons">
+            <div class="publisher">
+                <p><textarea id="ztxt" name="content" style="width: 1478px; margin-bottom: 5px; background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ababab;" rows="7" v-model="sendCmmtText"></textarea></p>
+
+                <p><a class="trigger" href="javascript:;">☺</a></p>
+                <input type="button" class="tz_fasong" value="发送" v-on:click="sendComment"/><span><div class="main">
+
+                <p><textarea name="content" ></textarea></p>
+
+            </div>
+            </span>
+            </div>
+        </div>
+        </div>
+    </div>
+
+<script>
+    $.emoticons({
+        'activeCls': 'trigger-active'
+    }, function (api) {
+        var $content = $('textarea[name="content"]');
+        var $result = $('.trigger');
+        $('#format').click(function () {
+            $result.html(api.format($content.val()));
+        });
+    });
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+
+<script src="js/tiezi.js"></script>
+
+</body>
+<script>
+    $(function () {
+
+        icoroll({
+            links: $('.scroll'),
+            tip_distance: 30,
+            back_enabled: true,
+            time: 1500
+        }, {
+            position: 'right',
+            elements: [
+                { 'class':'icon-home-2','href':'#home','content':'回到顶部'},
+                { 'class':'icon-chrome','href':'#browsers','content':'回帖（楼层）'},
+                { 'class':'icon-arrow-left-2','href':'#history','content':'首页'},
+                { 'class':'icon-arrow-left-2','href':'#asd','content':'跳转楼层<input type="text" style="width:30px" id="hrefFloor">'}
+            ]
+        });
+    });
+    
+</script>
+<script src="js/vue.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/animatescroll.js"></script>
+<script type="text/javascript" src="js/post.js"></script>
+</html>

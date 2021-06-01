@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/ys.css"/>
+    <link rel="stylesheet" href="css/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/drl.css"/>
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+<body>
+<div class="dsd">
+
+    <aside class="box" id="test">
+        <button id="btn">三</button>
+        <ul>
+            <li><h3>青鸟博仁传后台</h3></li>
+            <li><a href="AdminShouYe.html" class="hout">后台首页</a></li>
+            <li><a href="GmGuanLi.html">Gm管理</a></li>
+            <li><a href="GmEmail.html">邮件系统</a></li>
+            <li><a href="index.html">用户管理</a></li>
+            <li><a href="FenLeiGm.html">分类管理</a></li>
+            <li><a href="TongJiBiao.html">统计图</a></li>
+            <li><a href="GuanYu.html">关于我们</a></li>
+        </ul>
+        <img class="shagay" src="../images/Qgaydou.png" alt=""/>
+    </aside>
+    <section>
+        <div class="col-md-8">
+            <div class="headtou"><span class="yhhang"><img class="yhimg" src="../images/ai-user.png" alt=""/><h4
+                    class="yhname">admin</h4><h4 class="yhesc">[退出]</h4></span></div>
+            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+            <p class="tongjixiang">选择博仁传统计项</p>
+            <div class="xuanzetjt">
+
+                <select class="xlktjt" >
+                    <option value="" disabled selected>请选择统计图标样式</option>
+                    <option value="1" onclick="window.location.href='TongJiBiao.html'">论坛帖子分类占比</option>
+                    <option value="2" onclick="window.location.href='TongJiBiao2.html'">论坛访问量（日ip）</option>
+                    <option value="3" onclick="window.location.href='TongJiBiao3.html'">论坛各类用户数</option>
+                </select></div>
+            <div id="itemmm" style="width:1000px;height:500px"></div>
+            <script type="text/javascript">
+                // 绘制图表。
+                //            echarts.init(document.getElementById('main')).setOption({
+                var myChart = echarts.init(document.getElementById('itemmm'));
+                data = [["2019-04-01",116],["2019-04-02",129],["2019-04-03",135],["2019-04-04",86],["2019-04-05",73],["2019-04-06",85],["2019-04-07",73],["2019-04-08",68],["2019-04-09",92],["2019-04-10",130],["2019-04-11",245],["2019-04-12",139],["2019-04-13",115],["2019-04-14",111],["2019-04-15",309],["2019-04-16",206],["2019-04-17",137],["2019-04-18",128],["2019-04-19",85],["2019-04-20",94],["2019-04-21",71],["2019-04-22",106],["2019-04-23",84],["2019-04-24",93],["2019-04-25",85],["2019-04-26",73],["2019-04-27",83],["2019-04-28",125],["2000-07-03",107],["2019-04-29",82],["2019-04-30",44],["2019-05-01",72],["2019-05-02",106],["2019-05-03",107],["2019-05-04",66],["2000-05-05",91],["2019-05-06",92],["2019-05-07",113],["2019-05-08",107],["2019-05-09",131],["2019-05-10",111],["2019-05-11",64],["2019-05-12",69],["2019-05-13",88],["2019-05-14",77],["2019-05-15",83],["2019-05-16",111],["2019-05-17",57],["2019-05-18",55],["2019-05-19",60]];
+
+                var dateList = data.map(function (item) {
+                    return item[0];
+                });
+                var valueList = data.map(function (item) {
+                    return item[1];
+                });
+
+                option = {
+
+                    // Make gradient line here
+                    visualMap: [{
+                        show: false,
+                        type: 'continuous',
+                        seriesIndex: 0,
+                        min: 0,
+                        max: 400
+                    }, {
+                        show: false,
+                        type: 'continuous',
+                        seriesIndex: 1,
+                        dimension: 0,
+                        min: 0,
+                        max: dateList.length - 1
+                    }],
+
+
+                    title: [{
+                        left: 'center',
+                        text: '青鸟博仁传用户活跃量'
+                    }, {
+                        top: '55%',
+                        left: 'center',
+                        text: '青鸟博仁传游客活跃量'
+                    }],
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    xAxis: [{
+                        data: dateList
+                    }, {
+                        data: dateList,
+                        gridIndex: 1
+                    }],
+                    yAxis: [{
+                        splitLine: {show: false}
+                    }, {
+                        splitLine: {show: false},
+                        gridIndex: 1
+                    }],
+                    grid: [{
+                        bottom: '60%'
+                    }, {
+                        top: '60%'
+                    }],
+                    series: [{
+                        type: 'line',
+                        showSymbol: false,
+                        data: valueList
+                    }, {
+                        type: 'line',
+                        showSymbol: false,
+                        data: valueList,
+                        xAxisIndex: 1,
+                        yAxisIndex: 1
+                    }]
+                };
+
+                myChart.setOption(option);
+                //            });
+
+            </script>
+        </div>
+    </section>
+
+
+</div>
+<script type="text/javascript" src="js/js.js"></script>
+
+</body>
+</html>

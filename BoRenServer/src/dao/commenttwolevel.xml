@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CommentTwoLevelDao">
+	<resultMap type="entity.CommentTwoLevel" id="commentTwoLevelMap">
+		<id property="cmmtTwoId" column="cmmtTwoId" />
+		<result property="cmmtTwoText" column="cmmt_Two_Text" />
+		<result property="cmmtFloor" column="cmmt_Floor" />
+		<result property="cmmtTime" column="cmmt_Time" />
+		<result property="cmmtTwoStatus" column="cmmt_Two_Status" />
+		<result property="sendId" column="cmmt_send_id" />
+		<result property="sendToId" column="cmmt_send_to_id" />
+		<result property="cmmtId" column="cmmt_Id" />
+		<result property="sendName" column="sendName" />
+		<result property="sendToName" column="sendToName" />
+		<result property="sendUserImg" column="sendUserImg" />
+	</resultMap>
+	<select id="queryCmmtTwoOne" resultMap="commentTwoLevelMap"
+		parameterType="entity.CommentTwoLevel">
+		select *
+		,(select user_name from user_info where user_id = two.cmmt_send_id) sendName
+		,(select user_name from user_info where user_id = two.cmmt_send_to_id) sendToName
+		,(select user_img from user_info where user_id = two.cmmt_send_id) sendUserImg
+		from comment_two_level two
+		where two.cmmt_id = #{cmmtId}
+		limit #{firstResult},#{maxResults}
+	</select>
+	
+	<select id="commentTwoSize" 
+			resultType="int"
+			parameterType="entity.CommentTwoLevel">
+		select count(1)
+		from comment_two_level two
+		where two.cmmt_id = #{cmmtId}
+	</select>
+	
+	<insert id="addCommentTwoLevel"
+			parameterType="entity.CommentTwoLevel">
+		insert into comment_two_level
+		(cmmt_id,cmmt_two_text,cmmt_floor,cmmt_send_id,cmmt_send_to_id)
+		values(#{cmmtId},#{cmmtTwoText},#{cmmtFloor},#{sendId},#{sendToId})
+	</insert>
+</mapper>

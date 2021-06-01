@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+  <link type="text/css" rel="stylesheet" href="css/zhuye.css">
+    <link type="text/css" rel="stylesheet" href="css/shangbiaotilan.css">
+    <link type="text/css" rel="stylesheet" href="css/denglu.css">
+    <link rel="stylesheet" href="css/dist/css/bootstrap.min.css"/>
+    <!--<link rel="stylesheet" href="css/dist/css/bootstrap.min.css"/>-->
+    <script type="text/javascript" src="public/script/jquery.min.js"></script>
+    <script type="text/javascript" src="code/jquery.emoticons.js"></script>
+    <!--fenge-->
+    <link rel="stylesheet" href="icoroll/icomoon/style.css"/>
+    <link rel="stylesheet" href="icoroll/icoroll.css"/>
+    <link rel="stylesheet" href="icoroll/dark.css"/>
+
+    <script type="text/javascript" src="js/zhuce.js"></script>
+
+    <script src="icoroll/jquery.js"></script>
+    <script src="icoroll/icoroll.js"></script>
+    <script src="js/vue.js"></script>
+    <style type="text/css">
+        .emoticons {
+            width: 525px;
+            margin-bottom: 20px;
+        }
+
+        .emoticons .publisher {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px dotted #dbdbdb;
+        }
+
+        .emoticons .publisher textarea {
+            width: 500px;
+            height: 140px;
+            padding: 5px 10px;
+            border: 1px solid #dbdbdb;
+            resize: none;
+        }
+
+        .emoticons .publisher .trigger {
+            font-size: 34px;
+            font-weight: bold;
+            color: #e8e8e8;
+            position: absolute;
+            margin-top: -11px;
+        }
+
+        .emoticons .publisher .trigger-active {
+            color: #eb7350;
+        }
+
+        .emoticons .result {
+            /*padding: 10px 15px;*/
+            border: 1px dotted #dbdbdb;
+            margin-top: 10px;
+            height: 150px;
+            line-height: 24px;
+        }
+
+        .emoticons .result img {
+            vertical-align: middle;
+        }
+
+        .widget-layer {
+            position: relative;
+            width: 410px;
+            margin-top: 8px;
+            background: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: 2px;
+        }
+
+        .widget-layer:before {
+            position: absolute;
+            top: -16px;
+            left: 2px;
+            display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-bottom-color: #dbdbdb;
+        }
+
+        .widget-layer:after {
+            position: absolute;
+            top: -15px;
+            left: 2px;
+            display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-bottom-color: #f0f0f0;
+        }
+
+        .widget-layer .widget-tool {
+            height: 28px;
+            background: #f0f0f0;
+        }
+
+        .widget-layer .widget-close {
+            float: right;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .widget-layer ul {
+            width: 372px;
+            margin: 0 auto;
+            padding: 15px 5px 20px;
+            overflow: hidden;
+        }
+
+        .widget-layer li {
+            position: relative;
+            z-index: 8;
+            float: left;
+            width: 22px;
+            height: 22px;
+            padding: 4px;
+            margin-left: -1px;
+            margin-top: -1px;
+            border: 1px solid #e8e8e8;
+            cursor: pointer;
+        }
+
+        .widget-layer li:hover {
+            z-index: 9;
+            border-color: #eb7350;
+        }
+        /*body::-webkit-scrollbar{*/
+            /*display: none;*/
+        /*}*/
+    </style>
+</head>
+<body style=" background-image: url('img/timg.jpg');background-repeat: no-repeat;background-attachment: fixed;">
+<div class="all">
+<!--———————————————登录—————————————————-->
+<div class="denglu" hidden>
+    <center>
+        <div class="dengluchuangkou">
+            <div class="dl_zhushitiao">
+                <button class="dl_guanbi">×</button>
+            </div>
+
+            <div class="kuaisu">
+                <div class="span1">快速安全登录</div>
+                <div class="span2">推荐使用<span class="span4">QQ手机版</span>扫描二维码，</br>安全登录，防止盗号。</div>
+
+                <div class="span3"><img class="erweima" src="img/IMG_20190505_165207.jpg"></div>
+                <br/>
+                <span class="dl_zhanghao">账号密码登录</span>
+            </div>
+            <div class="zhanghao" hidden>
+                <div class="span1">账号密码登录</div>
+                <div class="span2">推荐使用<span class="span5">快速安全登录</span>，防止盗号。</div>
+                <div>
+                    <input class="dl_shuru" type="text" placeholder="请输入用户名"><br/>
+                    <input class="dl_shuru" type="text" placeholder="密码"><br/>
+                    <input class="dl_anniu" type="button" value="登录"><br/><br/><br/><br/>
+                    <span class="dl_zhuce">注册新账号</span>
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
+<!--——————————————————————————————————-->
+<div class="biaotilan"  style="margin-top: -70px;">
+    <div class="tianqi ">
+        <iframe width="250" scrolling="no" colzongtisousuozongtisousuoor="ffffff" height="25" frameborder="0" allowtransparency="true"
+                src="//i.tianqi.com/index.php?c=code&id=1&icon=1&wind=1&num=2&site=12&color=ffffff"></iframe>
+    </div>
+    <div class="zhongxin ">
+        <input type="text" class="zongtisousuo" id="search"  v-model="postTitle">
+        <button class="sousuobtn" v-on:click="serschPost()">搜索</button>
+    </div>
+    <div class="gerenxinxi " hidden>
+  <span class="qingdenglu" id="login">
+  <a class="dl" href="javascript:;">登陆</a>
+   <span style="color: #e6e6e6;font-weight: bold;">或</span>
+    <a href="javascript:;" class="zc">注册</a>
+    </span>
+    </div>
+
+</div>
+
+
+<!--<div class="dl_bj" style="width: 100%;margin: auto;height: 1000px;background: red;position: fixed;">-->
+<div class="dl_bj" hidden>
+    <div class="logo-box"  style="">
+        <div class="login" style="">
+            <div class="bxs-row" style="text-align:center;">
+            <span class="tips" style="color:#1fc0ff;font-weight: bold;font-size: 28px;">博仁登陆系统 <img class="guanbi_dl"
+                                                                                                    style="width: 25px;height: 25px;float: right;margin-top: -25px;margin-right: -24px;"
+                                                                                                    src="img/guanbi.png"
+                                                                                                    alt=""/></span>
+            </div>
+            <div class="bxs-row">
+                <input type="text" class="username" placeholder="用户名" value="admin">
+
+                <p class=" err err-username"></p>
+            </div>
+            <div class="bxs-row">
+                <input type="password" class="password" value="11" placeholder="密码">
+
+                <p class="err err-password"></p>
+            </div>
+            <div class="bxs-row">
+                <input type="submit" class="submit btn" value="登录">
+            </div>
+        </div>
+        <div class="verBox" style="opacity: 0;left: 404px;" id="datu">
+
+        </div>
+        <!--<div class="verBox">-->
+        <!--<div id="imgVer" style="display:inline-block;"></div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<div class="zc_bj" hidden>
+    <div class="logo-box1"  style="height: 810px;">
+        <div class="login1" style="">
+            <div class="bxs-row" style="text-align:center;">
+            <span class="tips" style="color:#1fc0ff;font-weight: bold;font-size: 28px;">创建用户 <img class="guanbi_zc"
+                                                                                                  style="width: 25px;height: 25px;float: right;margin-top: -25px;margin-right: -24px;"
+                                                                                                  src="img/guanbi.png"
+                                                                                                  alt=""/></span>
+            </div>
+            <div class="bxs-row">
+                <span id="ncnull" style="font-size: 12px;color: red;"></span><br/>
+                <input type="text" id="nicheng" class="zc_username" placeholder="请输入昵称">
+                <!--<p class=" err err-username"></p>-->
+            </div>
+            <div class="bxs-row">
+                <span id="yhmnull" style="font-size: 12px;"></span><br/>
+                <span> <input type="text" class="zc_email" placeholder="请输入邮箱或手机号（账号）"/> <input type="button" class="fsyzm" value="发送验证码"/></span>
+            </div>
+
+            <div class="bxs-row">
+                <span id="mmnull" style="font-size: 12px;"></span><br/>
+                <input type="password" class="zc_password" placeholder="请输入密码">
+                <!--<p class="err err-password"></p>-->
+            </div>
+            <div class="bxs-row">
+                <span id="qrmmnull" style="font-size: 12px;color: red;"></span><br/>
+                <input type="text" class="zc_querenmm" placeholder="请再次输入密码"/>
+            </div>
+            <div class="bxs-row">
+                <span style="font-size: 12px;" class="yzmmm"></span><br/>
+                <input type="text" class="yzm" placeholder="请输入验证码"/>
+            </div>
+            <div class="verBox1" style="" id="datu1">
+
+            </div>
+            <div class="xieyi">
+            <span style="font-size: 9px;">  <input class="zhuhi" hidden="false" id="kuang" type="checkbox" name="agree" style="display:inline-block;"
+                                                   value="0"/>我已同意并阅读《用户注册协议》</span>
+            </div>
+            <div class="bxs-row">
+                <input type="submit" class="submit_zc" value="注册">
+            </div>
+        </div>
+    </div>
+</div>
+<!--</div>-->
+
+
+<div class="fankui_ui" hidden>
+    <div class="fankui_caidan">
+        <h2>反馈</h2><span><img class="guanbi_fankui" style="width: 25px;height: 25px;float: right;margin-top: -25px;"
+                              src="img/guanbi.png" alt=""/></span>
+
+        <p><input type="text"
+                  style="width: 885px;height: 40px;margin-top:10px;background-color: #eef0f2;padding-left: 10px;border: 1px solid #286dae;"
+                  placeholder="请输入要反馈的标题"/></p>
+        <input type="text"
+               style="width: 885px;height: 40px;margin-top:10px;background-color: #eef0f2;padding-left: 10px;border: 1px solid #286dae;"
+               placeholder="请输入要反馈的内容"/>
+        <input type="button"
+               style="width: 897px;height: 40px;margin-top: 10px;padding-left: 10px;background-color: #005300;color: white;padding-right: 10px;"
+               value="立即反馈"/>
+    </div>
+
+</div>
+
+<div class="shensu_ui" hidden style="position:fixed;z-index: 2000;margin-left: 600px;">
+    <div class="fankui_caidan">
+        <h2>申诉</h2><span><img class="guanbi_shensu" style="width: 25px;height: 25px;float: right;margin-top: -25px;"
+                              src="img/guanbi.png" alt=""/></span>
+
+        <select style="width: 897px;height: 40px;" id="xuanze_fenlei1" >
+            <option>请选择要申诉的事情</option>
+            <option>账号申诉</option>
+            <option>帖子申诉</option>
+            <option>回帖申诉</option>
+        </select>
+        <input type="text"
+               style="width: 885px;height: 40px;margin-top:10px;background-color: #eef0f2;padding-left: 10px;border: 1px solid #286dae;"
+               placeholder="请输入要反馈的内容"/>
+        <input type="button"
+               style="width: 897px;height: 40px;margin-top: 10px;padding-left: 10px;background-color: #005300;color: white;padding-right: 10px;"
+               value="立即申诉"/>
+    </div>
+
+</div>
+
+
+<!--——————————————————————————————————-->
+<div class="fenleibankuai">
+    <h3 class="xgshui">{{postTypeName}}</h3>
+    <table class="table table-striped" id="xl_bj">
+        <tr>
+            <th>标题</th>
+            <th>发帖人</th>
+            <th>时间</th>
+            <th>回复</th>
+            <th>点赞</th>
+            <th>操作</th>
+        </tr>
+
+         <tr v-for="(item,index) in postHot.slice(0,3)">
+            <td><img class="title_tz" src="img/biaoti%20(2).png" alt=""/>&nbsp;&nbsp;<span class="remen">[热门]</span>&nbsp;&nbsp;{{item.postTitle}}
+            </td>
+            <td>{{item.userName}}</td>
+            <td>{{item.postTime}}</td>
+            <td><img class="title_pl" src="img/pinglun121.png" alt=""/>({{item.postCmmtNum}})</td>
+            <td><img class="title_dz" src="img/zan1.png" alt=""/>({{item.postLoveNum}})</td>
+            <td><a href="javascript:volid(0);" v-on:click="location(item.postId)">浏览</a></td>
+        </tr>
+        <tr v-for="item in postList">
+            <td><img class="title_tz" src="img/biaoti%20(2).png" alt=""/>&nbsp;&nbsp;<span class="remen"></span>&nbsp;&nbsp;{{item.postTitle}}
+            </td>
+            <td>{{item.userName}}</td>
+            <td>{{item.postTime}}</td>
+            <td><img class="title_pl" src="img/pinglun121.png" alt=""/>({{item.postCmmtNum}})</td>
+            <td><img class="title_dz" src="img/zan1.png" alt=""/>({{item.postLoveNum}})</td>
+            <td><a href="javascript:volid(0);" v-on:click="location(item.postId)">浏览</a></td>
+        </tr>
+    </table>
+
+    <nav>
+        <ul class="pagination pagination-sm" id="path_sx">
+            <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i>«</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i>»</a></li>
+        </ul>
+    </nav>
+
+</div>
+<span  v-if="acctId==-1" style="position:relative;left:300px;"> 请登录后发帖</span>
+<div class="fenleifatie"  v-if="acctId!=-1">
+    <h3 class="xgshui" id="tztz">发帖</h3>
+    <input type="text" value="" placeholder="请输入标题" v-model="sendPostTitle"/>
+     <select style="width: 140px" id="xuanze_fenlei" v-model="sendPostTypeId">
+				<option>请选择分类</option>
+				<option value="1">技术编程</option>
+				<option value="3">周边环境</option>
+				<option value="4">美女帅哥</option>
+				<option value="2">闲聊灌水</option>
+			</select>
+			
+			
+			<br/><span><input type="button" class="tz_jiacu" value="加粗" v-on:click="selectText('加粗')"/></span>
+    <span><input type="button" class="tz_xieti" value="斜体" v-on:click="selectText('斜体')"/></span><span>
+    <input class="tz_xiahuaxian" type="button" value="下划线" v-on:click="selectText('下划线')"/></span><span>
+   <!--  <input type="button" class="tz_tupian" mvalue="空格"/></span><span>
+    <input type="button" class="tz_biaoti" value="h3"/></span><span>
+    <input type="button" class="tz_huanhang" value="换行"/></span> -->
+
+    <div class="emoticons">
+        <div class="publisher">
+            <p> 
+            
+            <textarea name="content" style="width: 1478px" id="ztxt" rows="7"  v-model="sendPostText">
+            {{sendPostText}}
+            </textarea></p>
+
+            <p><a class="trigger" href="javascript:;" hidden>☺</a>
+            
+            
+            </p>
+            <input type="button" id="format" class="tz_fasong" value="发送" v-on:click="sendPost"/><span><div class="main">
+            <div class="xs_tz" style="width: 300px;height: 200px;border: 1px solid blueviolet;">
+					
+            </div>
+        </div>
+            </span>
+        </div>
+    </div>
+    
+</div>
+<div class="dibubanquan" style="margin-left: 140px;"><span  v-if="acctId!=-1"><a  href="javascript:;" class="shensu"><img src="img/kefu.png" class="kefuimg" alt=""/>
+<span
+        class="lxkefu" >申诉</span></a>
+        <a style="text-decoration: none;"  class="fankuia" href="javascript:;">
+        <img class="fankimg" style="" src="img/fankui%20(2).png" alt=""/>
+        <span class="fankui"> 反馈</span></a></span>
+
+
+<div class="youqinglianjie"><span>关于我们 | 免责声明</span>
+
+    <p class="xxbq">©2019 青鸟博仁传有限公司版权所有 由楠氏云升发展有限公司运营 著作权侵权 黑网文备案[170]0020号 互联网违法和不良信息举报电话：18645224970</p>
+
+    <p>
+        <img class="yq_one" src="img/baidu.png" alt=""/><img class="yq_two" src="img/qingniaochuanxin.png"
+                                                             alt=""/><img class="yq_two"
+                                                                          src="img/webstorm.png"
+                                                                          alt=""/><img class="yq_two"
+                                                                                       src="img/MyEclips.png"
+                                                                                       alt=""/><img
+            class="yq_two" src="img/PHP.png" alt=""/></p></div>
+
+</div>
+</div>
+<script>
+</script>
+
+
+<script>
+    $.emoticons({
+        'activeCls': 'trigger-active'
+    }, function (api) {
+        var $content = $('textarea[name="content"]');
+        var $result = $('.xs_tz');
+        $('#format').click(function () {
+            $result.html(api.format($content.val()));
+        });
+    });
+</script>
+</body>
+<script>
+</script>
+<script src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/BanKuaiJieMian.js"></script>
+</html>

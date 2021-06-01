@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CollectPostDao">
+<resultMap type="entity.CollectPost" id="collectMap">
+		<id property="collPostId" column="coll_post_id" />
+		<result property="acctId" column="coll_post_user_id" />
+		<result property="postId" column="coll_post_post_id" />
+	</resultMap>
+	<select id="queryOneByPostId"
+			parameterType="entity.CollectPost"
+			resultMap="collectMap">
+		select * from collect_post
+		where coll_post_user_id=#{acctId}
+		and coll_post_post_id=#{postId}
+	</select>
+	<insert id="addColl" 
+			parameterType="entity.CollectPost">
+		insert into collect_post (coll_post_user_id,coll_post_post_id)
+		values (#{acctId},#{postId})
+	</insert>
+</mapper>

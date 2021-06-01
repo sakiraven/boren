@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/ys.css"/>
+    <link rel="stylesheet" href="css/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/drl.css"/>
+    <!--<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="css/xcConfirm.css"/>
+    <script src="js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>-->
+    <!--<script>-->
+    <!--$(function(){-->
+    <!--$(".addgonggao").click(function(){-->
+    <!--var txt=  "公告标题";-->
+    <!--window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{-->
+    <!--onOk:function(v){-->
+    <!--console.log(v);-->
+    <!--}-->
+    <!--});-->
+    <!--});-->
+    <!--})-->
+    <!--</script>-->
+</head>
+<body>
+<div class="dsd">
+
+    <aside class="box" id="test">
+        <button id="btn">三</button>
+        <ul>
+            <li><h3>青鸟博仁传后台</h3></li>
+            <li><a href="AdminShouYe.html" class="hout">后台首页</a></li>
+            <li><a href="GmGuanLi.html">Gm管理</a></li>
+            <li><a href="GmEmail.html">邮件系统</a></li>
+            <li><a href="index.html">用户管理</a></li>
+            <li><a href="FenLeiGm.html">分类管理</a></li>
+            <li><a href="TongJiBiao.html">统计图</a></li>
+            <li><a href="GuanYu.html">关于我们</a></li>
+        </ul>
+        <img class="shagay" src="../images/Qgaydou.png" alt=""/>
+    </aside>
+    <section>
+
+        <div class="col-md-8">
+            <div class="headtou"><span class="yhhang"><img class="yhimg" src="../images/ai-user.png" alt=""/><h4
+                    class="yhname">admin</h4><h4 class="yhesc">[退出]</h4></span></div>
+            <h3 class="gmglxt">Gm管理系统</h3>
+
+            <div id="gmgonggao" class="alert alert-info" role="alert"><h4>公告管理：</h4>
+                <table class="table table-striped" id="caipubj">
+                    <tr>
+                        <th>公告标题</th>
+                        <th>公告内容</th>
+                        <th>操作</th>
+                    </tr>
+
+                    <tr>
+                        <td><img class="onegonggao" src="../images/gonggao.png" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;第一条公告
+                        </td>
+                        <td>这是一个非常棒的...</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td><img class="onegonggao" src="../images/gonggao.png" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;第二条公告
+                        </td>
+                        <td>这是一个非常棒的...</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                </table>
+                <form action="">
+                    <input type="button" class="addgonggao" value="+添加公告"/>
+
+                </form>
+
+
+            </div>
+            <div id="gmshipu" class="alert alert-success" role="alert"><h4>菜谱管理：</h4>
+                <table class="table table-striped" id="gonggaobj">
+                    <tr>
+                        <th>菜谱标题</th>
+                        <th>菜谱图片</th>
+                        <th>菜谱介绍</th>
+                        <th>操作</th>
+                    </tr>
+
+                    <tr>
+                        <td><img class="onegonggao" src="../images/caipu.png" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;鱼香肉丝</td>
+                        <td>c://imags/fd.png</td>
+                        <td>鱼香肉丝,真香...</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td><img class="onegonggao" src="../images/caipu.png" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;鱼香肉丝</td>
+                        <td>c://imags/fd.png</td>
+                        <td>鱼香肉丝,真香...</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                </table>
+                <input type="button" class="addcaipu" value="+添加菜谱"/>
+            </div>
+            <div id="gmshangpin" class="alert alert-danger" role="alert"><h4>商品管理：</h4>
+                <table class="table table-striped" id="shangpinbj">
+                    <tr>
+                        <th>商品标题</th>
+                        <th>商品图片</th>
+                        <th>商品内容</th>
+                        <th>操作</th>
+                    </tr>
+
+                    <tr>
+                        <td><img class="onegonggao" src="../images/shangpin.png" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;德福巧克力
+                        </td>
+                        <td>c://dsd/11.png</td>
+                        <td>你猜德福好吃不...</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td><img class="onegonggao" src="../images/shangpin.png" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;德福巧克力
+                        </td>
+                        <td>c://dsd/11.png</td>
+                        <td>你猜德福好吃不...</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                </table>
+                <input type="button" class="addshangpin" value="+添加商品"/>
+            </div>
+        </div>
+        <div class="mgbj" hidden="true">
+            <div class="moguiutw"><h3 class="tjgg">添加公告</h3> <span><img class="guanbian" src="../images/guanbi.png"
+                                                                        alt=""/></span> <input type="text" class="ggbt"
+                                                                                               value=""
+                                                                                               placeholder="请输入公告标题"/><input
+                    type="text" class="ggnr" placeholder="请输入公告内容" value=""/><input
+                    type="text" hidden="true" placeholder="上传图片地址"/><input
+                    type="button" class="ljtj" value="立即添加"/></div>
+        </div>
+    </section>
+</div>
+<script type="text/javascript" src="js/js.js"></script>
+<script>
+    $(function () {
+        $(".guanbian").click(function () {
+            $(".mgbj").hide();
+        })
+        $(".addgonggao").click(function () {
+            $(".mgbj").show();
+        })
+    })
+</script>
+</body>
+</html>

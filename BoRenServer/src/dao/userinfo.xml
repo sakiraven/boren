@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserInfoDao">
+	<resultMap type="entity.UserInfo" id="userInfoMap">
+		<id property="userId" column="user_Id" />
+		<result property="acctId" column="acct_Id" />
+		<result property="userName" column="user_Name" />
+		<result property="userEmial" column="user_Emial" />
+		<result property="userPhone" column="user_Phone" />
+		<result property="userSex" column="user_Sex" />
+		<result property="userImg" column="user_Img" />
+		<result property="userEx" column="user_Ex" />
+		<result property="userCoin" column="user_Coin" />
+		<result property="userBalance" column="user_Balance" />
+		<result property="userVip" column="user_Vip" />
+		<result property="userTime" column="user_Time" />
+		<result property="userSignIn" column="user_Sign_In" />
+		<result property="userStatus" column="user_Status" />
+	</resultMap>
+	<select id="queryOneInfo" resultMap="userInfoMap" parameterType="entity.UserInfo">
+		select * from user_info where user_id = #{acctId}
+	</select>
+	
+	<update id="sign" parameterType="entity.UserInfo">
+		update user_info set user_sign_in = 1
+		where user_id = #{acctId}
+	</update>
+	
+	<insert id="addUserInfo" parameterType="entity.UserInfo">
+		insert into user_info (user_id,user_name)
+		values(#{userId},#{userName})
+	</insert>
+	<update id="updateB" parameterType="entity.UserInfo">
+		<if test="userCoin==1">
+			update user_info set user_coin = user_coin+1
+		</if>
+		<if test="userCoin==-1">
+			update user_info set user_coin = user_coin-1
+		</if>
+		where user_id = #{acctId}
+	</update>
+	
+	
+</mapper>

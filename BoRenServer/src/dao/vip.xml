@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.VipDao">
+<!-- <resultMap type="entity.Account" id="accountMap">
+		<id property="acctId" column="acct_Id" />
+		<result property="acctName" column="acct_Name" />
+		<result property="acctPwd" column="acct_Pwd" />
+		<result property="acctAdmin" column="acct_Admin" />
+	</resultMap> -->
+	<select id="isVip" 
+			resultType="int" 
+			parameterType="int">
+		select count(1) from vip 
+		where vip_user_id = #{userId}
+	</select>
+	
+</mapper>

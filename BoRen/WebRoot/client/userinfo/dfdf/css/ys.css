@@ -1,0 +1,629 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1920px;
+}
+
+#btn {
+    position: absolute;
+    top: 22%;
+    left: 298px;
+    height: 75px;
+    border: 0;
+    border-left: 1px solid rgb(23, 32, 0.2);
+    background: #336699;
+    color: #fff;
+    cursor: pointer;
+}
+
+a {
+    color: white;
+}
+
+.box {
+    float: left;
+    position: relative;
+    left: 0;
+    height: 1000px;
+    width: 300px;
+    margin-left: 0;
+    display: block;
+    background: #336699;
+    -moz-transition: margin-left 2s;
+    transition: margin-left 2s;
+}
+
+.box h3 {
+    color: white;
+    font-weight: bold;
+}
+
+aside ul li {
+    height: 80px;
+    line-height: 80px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    list-style-type: none;
+    text-align: center;
+}
+
+aside ul li img {
+    width: 30px;
+    height: 30px;
+}
+
+aside ul li a {
+    width: 100%;
+    height: 100%;
+    text-decoration-line: none;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+}
+
+aside ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    height: 1000px;
+}
+
+section h1 {
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+
+.shagay {
+    width: 300px;
+    height: 240px;
+    position: relative;
+    margin-top: 60px;
+}
+
+.headtou {
+    background: #336699;
+    width: 101%;
+    height: 78px;
+    position: absolute;
+    margin-top: -83px;
+    margin-left: -26px;
+}
+
+.yhimg {
+    width: 22px;
+    height: 22px;
+    float: left;
+    position: relative;
+    margin-top: 4px;
+}
+
+.yhname {
+    float: left;
+    font-size: 15px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.yhesc {
+    color: white;
+    font-size: 15px;
+    position: relative;
+    margin-bottom: 1px;
+}
+
+.yhhang {
+    position: absolute;
+    margin-left: 1450px;
+    margin-top: 35px;
+}
+
+.jubaomail {
+    width: 33%;
+    background: #336699;
+    float: left;
+    height: 50px;
+    text-align: center;
+    color: #e6e6e6;
+    border-right: 1px solid #9d9d9d;
+    font-size: 18px;
+    padding-top: 11px;
+}
+
+.fankuimail {
+    font-size: 18px;
+    width: 33%;
+    float: left;
+    height: 50px;
+    text-align: center;
+    border-right: 1px solid #9d9d9d;
+    padding-top: 11px;
+}
+
+.shensumail {
+    width: 33%;
+    float: left;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 11px;
+}
+
+.mailxt {
+    background-color: rgb(227, 227, 227);
+    height: 50px;
+    border-bottom: 1px solid #9d9d9d;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#dsdsf {
+    position: relative;
+    margin-top: 10px;
+}
+
+.weidumail {
+    width: 26px;
+    height: 26px;
+}
+
+.yidumail {
+    width: 21px;
+    height: 21px;
+    margin-left: 2px;
+    margin-right: 2.6px;
+}
+
+.mailshanchu {
+    border: 1px solid rgb(227, 239, 242);
+    background-color: rgb(235, 248, 254);
+    color: rgb(75, 177, 209);
+    -moz-border-radius: 15px; /* Gecko browsers */
+    -webkit-border-radius: 15px; /* Webkit browsers */
+    border-radius: 250px; /* W3C syntax */
+    width: 60px;
+    height: 30px;
+}
+
+.mailchakan {
+    border: 1px solid rgb(227, 239, 242);
+    background-color: rgb(235, 248, 254);
+    color: rgb(75, 177, 209);
+    -moz-border-radius: 15px; /* Gecko browsers */
+    -webkit-border-radius: 15px; /* Webkit browsers */
+    border-radius: 250px; /* W3C syntax */
+    width: 60px;
+    height: 30px; /* W3C syntax */
+}
+
+#scan {
+    height: 20px;
+    text-align: center;
+}
+
+.htxx {
+    border: 1px solid orangered;
+    height: 133px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.tzxx {
+    border: 1px solid darkslateblue;
+    height: 400px;
+    margin: 10px;
+    padding: 10px;
+    background: url("../../images/naruto-074.jpg");
+    filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.htht {
+    border: 1px solid green;
+    height: 200px;
+    margin: 10px;
+}
+
+.xxone {
+    color: #005d00;
+}
+
+.xxtwo {
+    color: orange;
+}
+
+.xxthree {
+    color: red;
+}
+
+.xxfour {
+    color: blue;
+}
+
+.fasong {
+    background-color: #007e00;
+    border: 1px solid #696969;
+    color: white;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#itemmm {
+    margin: auto;
+    /*margin-left: 400px;*/
+    margin-top: 140px;
+}
+
+.xlktjt {
+    background-color: white;
+    width: 100%;
+    margin-top: 0px;
+    height: 40px;
+}
+
+.tongjixiang {
+    color: #336699;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/*关于我们*/
+.tpt-about {
+    /*background: #f2f2f2;*/
+}
+
+/*.tpt-about img {*/
+/*width: 100%;*/
+/*height: 400px;*/
+/*}*/
+
+.tpt-about h3 {
+    color: #333;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 20px 0 10px 0;
+}
+
+.tpt-about h4 {
+    color: #999;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 0 40px 0;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.tpt-about p {
+    color: #999;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 0 20px 0;
+}
+
+.tpt-about a {
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 36px;
+    color: #fff;
+    background: #336699;
+    font-size: 14px;
+}
+
+.fdqb:hover {
+    background-color: #ff5b17;
+    color: white;
+    text-decoration: none;
+}
+
+.fdqb {
+    margin-bottom: 20px;
+}
+
+kfhj {
+    color: green;
+}
+
+kfry {
+    color: blue;
+}
+
+gxry {
+    color: red;
+}
+
+#helloadmin {
+    margin-top: 10px;
+}
+
+.chakantongjitu {
+    background-color: green;
+    color: white;
+    width: 130px;
+    height: 35px;
+}
+
+.yonghuguanli {
+    background-color: #ddd108;
+    color: white;
+    width: 130px;
+    height: 35px;
+}
+
+.gmfenlei {
+    background-color: #b91b19;
+    color: white;
+    width: 130px;
+    height: 35px;
+}
+
+.yyy {
+    color: #8e8e8e;
+}
+
+#gmgonggao {
+    width: 32%;
+    height: 700px;
+    margin: 10px;
+    float: left;
+    position: relative;
+    z-index: 1;
+}
+
+#gmshipu {
+    width: 32%;
+    height: 700px;
+    float: left;
+    margin: 10px;
+}
+
+#gmshangpin {
+    width: 30%;
+    height: 700px;
+    float: left;
+    margin: 10px;
+}
+
+.onegonggao {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+}
+
+.addgonggao {
+    width: 100%;
+    height: 40px;
+    background-color: #336699;
+    color: white;
+    margin-top: 460px;
+}
+
+.addcaipu {
+    width: 100%;
+    height: 40px;
+    background-color: #55860c;
+    color: white;
+    margin-top: 460px;
+}
+
+.addshangpin {
+    width: 100%;
+    height: 40px;
+    background-color: #b32a22;
+    color: white;
+    margin-top: 460px;
+}
+
+#gonggaobj tr {
+    background: rgba(0, 0, 0, 0.0);
+}
+
+#caipubj tr {
+    background: rgba(0, 0, 0, 0.0);
+}
+
+#shangpinbj tr {
+    background: rgba(0, 0, 0, 0.0);
+}
+
+.gmglxt {
+    color: #336699;
+    margin-left: 10px;
+}
+
+#dialog {
+    background-color: #fff;
+    border: 5px solid rgba(0, 0, 0, 0.4);
+    height: 400px;
+    left: 50%;
+    margin: -200px 0 0 -100px;
+    padding: 1px;
+    position: fixed !important; /* 浮动对话框 */
+    position: absolute;
+    top: 60%;
+    width: 400px;
+    z-index: 5;
+    border-radius: 5px;
+    display: none;
+}
+
+#dialog p {
+    margin: 0 0 12px;
+    height: 24px;
+    line-height: 24px;
+    background: #CCCCCC;
+}
+
+#dialog p.close {
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialog p.close a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.fujian {
+    margin-left: 20px;
+}
+
+.bk_one {
+    width: 48.5%;
+    height: 400px;
+    float: left;
+    border: 1px solid darkolivegreen;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bk_two {
+    width: 48.5%;
+    height: 400px;
+    float: right;
+    border: 1px solid darkolivegreen;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bk_three {
+    width: 48.5%;
+    height: 400px;
+    float: left;
+    border: 1px solid darkolivegreen;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bk_four {
+    width: 48.5%;
+    height: 400px;
+    float: right;
+    border: 1px solid darkolivegreen;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bankuaifenye {
+    margin-left: 530px;
+    margin-top: -30px;
+}
+
+/**/
+#bk1 {
+    margin-top: 15px;
+
+}
+
+#bk1 tr {
+    background: 0, 0, 0, 0;
+    border: none;
+}
+
+.shanchubk {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-top: -37px;
+    margin-left: 690px;
+}
+
+.tianjiabk {
+    margin: 10px;
+    /*border: 1px solid black;*/
+    margin: auto;
+}
+
+.bktext {
+    width: 100%;
+    background: white;
+    height: 40px;
+
+}
+
+.addbk {
+    margin-top: 10px;
+    background-color: #005d00;
+    color: white;
+    width: 100%;
+    height: 35px;
+}
+
+.bksm {
+    color: #808080;
+    margin-top: 145px;
+}
+
+.mgbj {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    z-index: 9;
+}
+
+.moguiutw {
+    width: 500px;
+    height: 245px;
+    background-color: white;
+    position: absolute;
+    z-index: 10;
+    /*margin-left: 750px;*/
+    /*top: 20%;*/
+
+    border-radius: 10px;
+    top: 10%;
+    border: 1px solid #757575;
+    left: 38%;
+}
+
+.tjgg {
+margin-left: 15px;
+
+}
+.ggbt{
+width: 94%;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 40px;
+    margin-top: 10px;
+}
+.ggnr{
+    width: 94%;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 40px;
+    margin-top: 20px;
+}
+.ljtj{
+    margin-top: 20px;
+    width: 94%;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #3d8aff;
+    color: white;
+    height: 40px;
+}
+.guanbian{
+    width: 25px;
+    height: 25px;
+    float: right;
+   margin-top: -40px;
+    margin-right: 10px;
+}

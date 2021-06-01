@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CookBookDao">
+<resultMap type="entity.CookBook" id="cookBookMap">
+		<id property="cookId" column="cook_Id" />
+		<result property="cookImg" column="cook_Img" />
+		<result property="cookName" column="cook_Name" />
+		<result property="cookPrice" column="cook_Price" />
+	</resultMap>
+	<select id="queryCookBook" resultMap="cookBookMap">
+		select * from cook_book
+	</select>
+</mapper>

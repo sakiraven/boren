@@ -1,0 +1,13 @@
+.fenleibankuai{
+    margin: 0px auto;
+    margin-top:70px;
+    width: 1500px;
+    height: 243px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #1c5d8c;
+}
+#xl_bj tr{
+    background: rgba(0, 0, 0, 0.0);
+    color: #eaeaea;
+}

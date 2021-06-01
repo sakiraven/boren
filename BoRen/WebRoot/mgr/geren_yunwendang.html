@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/geren.css"/>
+</head>
+<body background="images/NARUTO%20(99).jpg">
+<div class="geren">
+    <div class="geren_xinxi">
+        <div class="touxiang"><img src="images/NARUTO%20(88).jpg" alt=""/>
+
+        </div>
+        <p class="geren_name">琉影丶邪尘</p>
+
+        <div><img class="xingbie" src="images/boy.png" alt=""/>
+
+            <p class="boy">用户名：琉影丶邪尘 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 吧龄：3年 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+                帖子：32</p></div>
+        <span class="renzheng"><img src="images/boy.png" alt=""/> <img src="images/boy.png" alt=""/> <img
+                src="images/boy.png" alt=""/></span>
+
+        <div class="fensi"> 粉丝数：500w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关注数：121
+        </div>
+        <div class="geren_xinxi_xia">
+            <a href="geren.html"> <span class="caidan1"><p>个人信息</p></span></a>
+            <a href="geren_shoucang.html"> <span class="caidan2"><p>查看收藏</p></span></a>
+            <a href="geren_tieziguanli.html">     <span class="caidan3"><p>帖子管理</p></span></a>
+            <a href="geren_yunwendang.html">    <span class="caidan4"><p>云文档</p></span></a>
+        </div>
+    </div>
+
+    <div id="yunwendang_xinxi">
+
+        <div class="fabu_wd"><input style="display:inline-block" type="text" placeholder="请输入您要搜索的文件名称"/> <input
+                type="button" value="搜索"/></div>
+        <div id="nav">
+            <div class="kongjian"><span class="sdsd">剩余免费空间：30MB</span><br/><br/> <input class="dfdf" style="width:800px" type="button" value="升级容量"/></div>
+            <a href="javascript:;"><span id="UnFin" class="cur">私密文件</span></a>
+            <a href="javascript:;"> <span id="Fin" class="fin1">公开文件</span></a>
+
+            <div class="xian"></div>
+            <div class="yun_text">
+
+                <ul id="task">
+                    <span class="shangchuan_css"><p >上传文件</p></span>
+                    <input type="file" />
+                    <!--<li>-->
+                        <!--<input type="checkbox">-->
+                        <!--<span id="title">2212</span>-->
+                        <!--<span id="details">341313</span>-->
+                        <!--<span id="del">341313</span>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(".fin1").click(function () {
+        $("#Fin").css({"color": "red", "border": "1px solid #999999", "border-bottom": "none", "padding": "5px"});
+        $(".cur").css({"color": "#3c3c3f", "border": "none"});
+    })
+    $(".cur").click(function () {
+        $(".cur").css({"color": "red", "border": "1px solid #999999", "border-bottom": "none", "padding": "5px"});
+        $("#Fin").css({"color": "#3c3c3f", "border": "none"});
+    })
+</script>
+<script src="js/geren.js"></script>
+</body>
+</html>
